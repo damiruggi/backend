@@ -1,15 +1,17 @@
+const crypto = require("crypto");
+
 class UserManager {
   static #users = [];
 
   create(data) {
     // Verifica si están todos los campos necesarios
-    if (!data.foto || !data.email || !data.password) {
+    if (!data.photo || !data.email || !data.password || !data.role) {
       console.error("Falta uno o más campos obligatorios.");
       return;
     }
 
     // Verifica el formato de la foto
-    if (!/\.(jpg|png)$/i.test(data.foto)) {
+    if (!/\.(jpg|png)$/i.test(data.photo)) {
       console.error("El formato de la foto debe ser JPG o PNG.");
       return;
     }
@@ -27,14 +29,11 @@ class UserManager {
     }
 
     const user = {
-      id:
-        UserManager.#users.length === 0
-          ? 1
-          : UserManager.#users[UserManager.#users.length - 1].id + 1,
-      foto: data.foto,
+      id: crypto.randomBytes(12).toString("hex"),
+      photo: data.photo,
       email: data.email,
       password: data.password,
-      role: 0,
+      role: data.role,
     };
     UserManager.#users.push(user);
     console.log("Usuario creado con éxito.");
@@ -53,15 +52,17 @@ function isValidEmail(email) {
 const gestorDeUsuarios = new UserManager();
 
 gestorDeUsuarios.create({
-  foto: "dami.jpg",
+  photo: "https://ceslava.s3-accelerate.amazonaws.com/2012/12/foto-perfil.jpg",
   email: "damiruggi@gmail.com",
   password: "123456",
+  role: "Admin"
 });
 
 gestorDeUsuarios.create({
-  foto: "antu.png",
+  photo: "https://wl-genial.cf.tsp.li/resize/728x/jpg/91b/430/964a9c5ac9933cc012d0bd80be.jpg",
   email: "antumoles@gmail.com",
   password: "567890",
+  role: "Admin"
 });
 
 console.log(gestorDeUsuarios.read());

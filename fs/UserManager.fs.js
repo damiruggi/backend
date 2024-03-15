@@ -20,6 +20,11 @@ module.exports = class UsersManager {
   
   async create(data) {
     try {
+      // Validar campos obligatorios
+      if (!data.photo || !data.email || !data.password || !data.role) {
+        throw new Error("Los campos 'photo', 'email', 'password' y 'role' son obligatorios.");
+      }
+
       if (!data.email) {
         throw new Error("Ingrese el email");
       } else {
@@ -37,7 +42,7 @@ module.exports = class UsersManager {
           photo: data.photo || "https://cdn-icons-png.freepik.com/512/266/266033.png",
           email: data.email,
           password: data.password,
-          rol: data.rol,
+          role: data.role,
         };
         
         all.push(user);
@@ -102,29 +107,29 @@ async function test() {
       photo: "https://ceslava.s3-accelerate.amazonaws.com/2012/12/foto-perfil.jpg",
       email: "damiruggi@gmail.com",
       password: "123456",
-      rol: "Admin",
+      role: "Admin",
     });
     await users.create({
       photo: "https://wl-genial.cf.tsp.li/resize/728x/jpg/91b/430/964a9c5ac9933cc012d0bd80be.jpg",
       email: "antumoles@gmail.com",
       password: "567890",
-      rol: "Admin",
+      role: "Admin",
     });
     await users.create({
       photo: "https://www.dzoom.org.es/wp-content/uploads/2020/02/portada-foto-perfil-redes-sociales-consejos-810x540.jpg",
       email: "lalalala@gmail.com",
       password: "234sdff",
-      rol: "Editor",
+      role: "Editor",
     });
     await users.read();
-    await users.readOne("68fdfd908dfea351ea6ee9b8");
-    await users.destroy("ce10a7d66224c1c5549ba399");
+    await users.destroy("97952b71a251c93d9365f24f");
     const third = await users.create({
       photo: "https://i.pinimg.com/550x/8d/e7/fa/8de7fa2af12330350613ede63532c4fb.jpg",
       email: "morena@hotmail.com",
       password: "fdsfdsda23",
-      rol: "Editor",
+      role: "Editor",
     });
+    await users.readOne("f084008bce968d71a58608dd");
     await users.readOne(third.id);
     await users.destroy(third.id);
   } catch (error) {
