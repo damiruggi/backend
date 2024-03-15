@@ -1,0 +1,16 @@
+[
+  {
+    "id": "2a061c8a9b0da3732c95528e",
+    "photo": "https://ceslava.s3-accelerate.amazonaws.com/2012/12/foto-perfil.jpg",
+    "email": "damiruggi@gmail.com",
+    "password": "123456",
+    "rol": "Admin"
+  },
+  {
+    "id": "68fdfd908dfea351ea6ee9b8",
+    "photo": "https://wl-genial.cf.tsp.li/resize/728x/jpg/91b/430/964a9c5ac9933cc012d0bd80be.jpg",
+    "email": "antumoles@gmail.com",
+    "password": "567890",
+    "rol": "Admin"
+  }
+]

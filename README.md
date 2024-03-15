@@ -19,10 +19,8 @@
 
 * `Node.js`
 * `NPM`
-* `node modules`
 
 ## Instalación
 
 * `npm install -g node`
 * `npm init -y`
-* `npm install nodemon`
