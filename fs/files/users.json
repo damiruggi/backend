@@ -1,16 +1,30 @@
 [
   {
-    "id": "b4021935bd877c5ddb2e42f6",
+    "id": "37dac8f681d4ee673e072e9f",
     "photo": "https://ceslava.s3-accelerate.amazonaws.com/2012/12/foto-perfil.jpg",
     "email": "damiruggi@gmail.com",
     "password": "123456",
     "role": "Admin"
   },
   {
-    "id": "f084008bce968d71a58608dd",
+    "id": "84e46be897f6b405df7a4fd7",
     "photo": "https://wl-genial.cf.tsp.li/resize/728x/jpg/91b/430/964a9c5ac9933cc012d0bd80be.jpg",
     "email": "antumoles@gmail.com",
     "password": "567890",
     "role": "Admin"
+  },
+  {
+    "id": "1a2a1bc7415d31dcb18c3c5e",
+    "photo": "https://www.dzoom.org.es/wp-content/uploads/2020/02/portada-foto-perfil-redes-sociales-consejos-810x540.jpg",
+    "email": "lalalala@gmail.com",
+    "password": "234sdff",
+    "role": "Editor"
+  },
+  {
+    "id": "6048f94d6d7001bbd8b98fe1",
+    "photo": "https://i.pinimg.com/550x/8d/e7/fa/8de7fa2af12330350613ede63532c4fb.jpg",
+    "email": "morena@hotmail.com",
+    "password": "fdsfdsda23",
+    "role": "Editor"
   }
 ]

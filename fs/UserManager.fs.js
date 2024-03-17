@@ -6,7 +6,7 @@ module.exports = class UsersManager {
     this.path = "./fs/files/users.json";
     this.init();
   }
-  
+
   init() {
     const exists = fs.existsSync(this.path);
     if (!exists) {
@@ -121,17 +121,15 @@ async function test() {
       password: "234sdff",
       role: "Editor",
     });
-    await users.read();
-    await users.destroy("97952b71a251c93d9365f24f");
-    const third = await users.create({
+    await users.create({
       photo: "https://i.pinimg.com/550x/8d/e7/fa/8de7fa2af12330350613ede63532c4fb.jpg",
       email: "morena@hotmail.com",
       password: "fdsfdsda23",
       role: "Editor",
     });
-    await users.readOne("f084008bce968d71a58608dd");
-    await users.readOne(third.id);
-    await users.destroy(third.id);
+    await users.read();
+    //await users.destroy("c678b56d14c4808beba07dd4");
+    //await users.readOne("722a0fdab7dc518fb4103e51");
   } catch (error) {
     console.log(error);
   }
