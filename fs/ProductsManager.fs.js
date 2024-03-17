@@ -135,9 +135,9 @@ class ProductsManagerFS {
 // Crear un archivo JSON con los productos iniciales
 const initialProducts = [];
 for (let i = 0; i < 10; i++) {
-  initialProducts.push({ id: crypto.randomBytes(8).toString('hex'), title: `Producto ${i + 1}`, photo: `/img/producto${i + 1}.jpg`, category: `Categoría ${i % 3}`, price: Math.floor(Math.random() * 100) + 1, stock: Math.floor(Math.random() * 100) + 1 });
+  initialProducts.push({ id: crypto.randomBytes(12).toString('hex'), title: `Producto ${i + 1}`, photo: `/img/producto${i + 1}.jpg`, category: `Categoría ${i % 3}`, price: Math.floor(Math.random() * 100) + 1, stock: Math.floor(Math.random() * 100) + 1 });
 }
-fs.writeFileSync('products.json', JSON.stringify(initialProducts));
+fs.writeFileSync( './fs/files/products.json' , JSON.stringify(initialProducts));
 
 // Ejemplo de uso para ProductsManagerMemory
 const managerMemory = new ProductsManagerMemory();
