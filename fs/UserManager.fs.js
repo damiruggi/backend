@@ -67,8 +67,8 @@ class UsersManager {
     try {
       let all = await fs.promises.readFile(this.path, "utf-8");
       all = JSON.parse(all);
-      let note = all.find((each) => each.id === id);
-      return note;
+      let user = all.find((each) => each.id === id);
+      return user;
     } catch (error) {
       console.log(error);
       return error;
@@ -79,13 +79,13 @@ class UsersManager {
     try {
       let all = await fs.promises.readFile(this.path, "utf-8");
       all = JSON.parse(all);
-      let note = all.find((each) => each.id === id);
-      if (note) {
+      let user = all.find((each) => each.id === id);
+      if (user) {
         let filtered = all.filter((each) => each.id !== id);
         filtered = JSON.stringify(filtered, null, 2);
         await fs.promises.writeFile(this.path, filtered);
       }
-      return note;
+      return user;
     } catch (error) {
       console.log(error);
       return error;
