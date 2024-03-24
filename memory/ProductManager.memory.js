@@ -121,7 +121,6 @@ manager.addProduct(
 );
 
 
-
   // Obtener todos los productos
   console.log("Todos los productos:", manager.getAllProducts());
   
