@@ -134,7 +134,7 @@ class ProductsManagerFS {
 
 // Crear un archivo JSON con los productos iniciales
 const initialProducts = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
   initialProducts.push({ id: crypto.randomBytes(12).toString('hex'), title: `Producto ${i + 1}`, photo: `/img/producto${i + 1}.jpg`, category: `Categoría ${i % 3}`, price: Math.floor(Math.random() * 100) + 1, stock: Math.floor(Math.random() * 100) + 1 });
 }
 fs.writeFileSync( './fs/files/products.json' , JSON.stringify(initialProducts));
@@ -143,7 +143,7 @@ fs.writeFileSync( './fs/files/products.json' , JSON.stringify(initialProducts));
 const managerMemory = new ProductsManagerMemory();
 
 console.log("Agregando 10 productos en memoria...");
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
   managerMemory.create({ title: `Producto ${i + 1}`, photo: `/img/producto${i + 1}.jpg`, category: `Categoría ${i % 3}`, price: Math.floor(Math.random() * 100) + 1, stock: Math.floor(Math.random() * 100) + 1 });
 }
 console.log("Productos en memoria:", managerMemory.read());

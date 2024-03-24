@@ -7,25 +7,25 @@ class UserManager {
     // Verifica si están todos los campos necesarios
     if (!data.photo || !data.email || !data.password || !data.role) {
       console.error("Falta uno o más campos obligatorios.");
-      return null;
+      return;
     }
 
     // Verifica el formato de la foto
     if (!/\.(jpg|png)$/i.test(data.photo)) {
       console.error("El formato de la foto debe ser JPG o PNG.");
-      return null;
+      return;
     }
 
     // Verificar el email
     if (!isValidEmail(data.email)) {
       console.error("El email proporcionado no es válido.");
-      return null;
+      return;
     }
 
     // Verificar la seguridad del password
     if (data.password.length < 6) {
       console.error("La contraseña debe tener al menos 6 caracteres.");
-      return null;
+      return;
     }
 
     const user = {
