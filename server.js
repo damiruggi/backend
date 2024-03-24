@@ -67,3 +67,38 @@ server.get("/api/users/:uid", async (req, res) => {
     });
   }
 });
+
+
+const ProductsManagerFS = require('./fs/files/ProductsManagerFS');
+
+const app = express();
+const managerFS = new ProductsManagerFS('fs/files/products.json');
+
+// Ruta para buscar un producto por su ID
+app.get('/api/products/:pid', (req, res) => {
+  const productId = req.params.pid;
+
+  // Buscar el producto por su ID
+  const product = managerFS.readOne(productId);
+
+  if (product) {
+    // Enviar una respuesta con el producto encontrado
+    res.status(200).json({
+      statusCode: 200,
+      response: product
+    });
+  } else {
+    // Enviar una respuesta indicando que el producto no fue encontrado
+    res.status(404).json({
+      statusCode: 404,
+      response: null,
+      message: "Producto no encontrado"
+    });
+  }
+});
+
+// Iniciar el servidor
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor iniciado en http://localhost:${PORT}`);
+});
