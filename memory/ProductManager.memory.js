@@ -64,7 +64,63 @@ class Product {
   manager.addProduct(
     new Product(5, "Televisor", "/img/Televisor.jpg", "Tecnologia", 150, 5)
   );
-  
+
+  new Product(
+  (6, "Joystick", "/img/Joystick.jpg", "Tecnologia", 35, 12)
+  );
+ manager.addProduct(
+  new Product(7, "Teclado", "/img/Teclado.jpg", "Tecnologia", 45, 10)
+ );
+
+ manager.addProduct(
+  new Product(8, "Zapatillas", "/img/Zapatillas.jpg", "Ropa", 60, 15)
+  );
+
+ manager.addProduct(
+  new Product(9, "Pantalon", "/img/Pantalon.jpg", "Ropa", 40, 18)
+ );
+
+manager.addProduct(
+  new Product(10, "Televisor", "/img/Televisor.jpg", "Tecnologia", 150, 5)
+);
+new Product(
+  (11, "Joystick", "/img/Joystick.jpg", "Tecnologia", 35, 12)
+  );
+ manager.addProduct(
+  new Product(12, "Teclado", "/img/Teclado.jpg", "Tecnologia", 45, 10)
+ );
+
+ manager.addProduct(
+  new Product(13, "Zapatillas", "/img/Zapatillas.jpg", "Ropa", 60, 15)
+  );
+
+ manager.addProduct(
+  new Product(14, "Pantalon", "/img/Pantalon.jpg", "Ropa", 40, 18)
+ );
+
+manager.addProduct(
+  new Product(15, "Televisor", "/img/Televisor.jpg", "Tecnologia", 150, 5)
+);
+new Product(
+  (16, "Joystick", "/img/Joystick.jpg", "Tecnologia", 35, 12)
+  );
+ manager.addProduct(
+  new Product(17, "Teclado", "/img/Teclado.jpg", "Tecnologia", 45, 10)
+ );
+
+ manager.addProduct(
+  new Product(18, "Zapatillas", "/img/Zapatillas.jpg", "Ropa", 60, 15)
+  );
+
+ manager.addProduct(
+  new Product(19, "Pantalon", "/img/Pantalon.jpg", "Ropa", 40, 18)
+ );
+
+manager.addProduct(
+  new Product(20, "Leclerc", "https://media.sitioandino.com.ar/p/c40971f59d912119cb2f9cfba11e74f6/adjuntos/335/imagenes/000/625/0000625880/790x0/smart/imagepng.png", "Tecnologia", 150, 5)
+);
+
+
   // Obtener todos los productos
   console.log("Todos los productos:", manager.getAllProducts());
   
