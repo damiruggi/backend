@@ -81,14 +81,14 @@ const id1 = gestorDeUsuarios.create({
   photo: "https://ceslava.s3-accelerate.amazonaws.com/2012/12/foto-perfil.jpg",
   email: "damiruggi@gmail.com",
   password: "123456",
-  role: "Admin",
+  role: 0,
 });
 
 const id2 = gestorDeUsuarios.create({
   photo: "https://wl-genial.cf.tsp.li/resize/728x/jpg/91b/430/964a9c5ac9933cc012d0bd80be.jpg",
   email: "antumoles@gmail.com",
   password: "567890",
-  role: "Admin",
+  role: 0,
 });
 
 console.log(gestorDeUsuarios.read(id1, id2));

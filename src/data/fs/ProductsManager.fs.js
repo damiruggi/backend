@@ -4,7 +4,6 @@ import crypto from "crypto";
 class Product {
   constructor() {
     this.path = "./src/data/fs/files/products.json";
-    this.products = [];
     this.init();
   }
 
@@ -16,80 +15,100 @@ class Product {
       console.log("Archivo creado!");
     } else {
       console.log("El archivo ya existe!");
-      // Leer los datos del archivo JSON al inicializar
-      const data = fs.readFileSync(this.path, "utf8");
-      this.products = JSON.parse(data);
     }
   }
 
   async create(data) {
     try {
-      const newProduct = {
-        id: this.generateRandomId(),
-        title: data.title,
-        photo: data.photo,
-        category: data.category,
-        price: data.price,
-        stock: data.stock,
-      };
-      this.products.push(newProduct);
-      await this.saveToFile();
-      return newProduct;
+      // Validar campos obligatorios
+      if (!data.title) {
+        throw new Error("El campo 'title' es obligatorio.");
+      } else {
+        const product = {
+          id: crypto.randomBytes(12).toString("hex"),
+          title: data.title,
+          photo:
+            data.photo ||
+            "https://getuikit.com/v2/docs/images/placeholder_600x400.svg",
+          category: data.category || "Zapatillas",
+          price: data.price || 1,
+          stock: data.stock || 1,
+        };
+        let all = await fs.promises.readFile(this.path, "utf-8");
+        all = JSON.parse(all);
+        all.push(product);
+        all = JSON.stringify(all, null, 2);
+        await fs.promises.writeFile(this.path, all);
+        return product;
+      }
     } catch (error) {
-      console.error("Error al crear el producto:", error);
-      return null;
+      throw error; // Lanzar el error para que pueda ser manejado por el llamante
     }
   }
 
   async read(category) {
     try {
-      return this.products;
+      let all = await fs.promises.readFile(this.path, "utf-8");
+      all = JSON.parse(all);
+      category && (all = all.filter((each) => each.category === category));
+      return all;
     } catch (error) {
-      console.error("Error al leer los productos:", error);
-      return [];
+      console.log(error);
+      return error;
     }
   }
 
   async readOne(id) {
     try {
-      const product = this.products.find((product) => product.id === id);
-      if (!product) {
-        throw new Error("Producto no encontrado");
-      }
+      let all = await fs.promises.readFile(this.path, "utf-8");
+      all = JSON.parse(all);
+      let product = all.find((each) => each.id === id);
       return product;
     } catch (error) {
-      console.error("Error al buscar el producto:", error);
-      return null;
+      console.log(error);
+      return error;
+    }
+  }
+
+  async update(id, data) {
+    try {
+      let all = await this.read();
+      let one = all.find((each) => each.id === id);
+      if (one) {
+        for (let prop in data) {
+          one[prop] = data[prop];
+        }
+        all = JSON.stringify(all, null, 2);
+        await fs.promises.writeFile(this.path, all);
+        return one;
+      } else {
+        const error = new Error("Not found!");
+        error.statusCode = 404;
+        throw error;
+      }
+    } catch (error) {
+      throw error;
     }
   }
 
   async destroy(id) {
     try {
-      const index = this.products.findIndex((product) => product.id === id);
-      if (index === -1) {
-        throw new Error("Producto no encontrado");
+      let all = await fs.promises.readFile(this.path, "utf-8");
+      all = JSON.parse(all);
+      let product = all.find((each) => each.id === id);
+      if (product) {
+        let filtered = all.filter((each) => each.id !== id);
+        filtered = JSON.stringify(filtered, null, 2);
+        await fs.promises.writeFile(this.path, filtered);
+        return product;
+      } else {
+        const error = new Error("not found!");
+        error.statusCode = 404;
+        throw error;
       }
-      const deletedProduct = this.products.splice(index, 1)[0];
-      await this.saveToFile();
-      return deletedProduct;
     } catch (error) {
-      console.error("Error al eliminar el producto:", error);
-      return null;
+      throw error;
     }
-  }
-
-  async saveToFile() {
-    try {
-      const stringData = JSON.stringify(this.products, null, 2);
-      fs.writeFileSync(this.path, stringData);
-      console.log("Datos guardados en el archivo JSON");
-    } catch (error) {
-      console.error("Error al guardar los datos en el archivo JSON:", error);
-    }
-  }
-
-  generateRandomId() {
-    return crypto.randomBytes(12).toString("hex");
   }
 }
 

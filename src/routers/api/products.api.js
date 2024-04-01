@@ -1,18 +1,18 @@
 import { Router } from "express";
-import notesManager from "../../data/fs/NotesManager.fs.js";
+import productManager from "../../data/fs/ProductsManager.fs.js";
 
-const notesRouter = Router();
+const productsRouter = Router();
 
-notesRouter.get("/", read);
-notesRouter.get("/:nid", readOne);
-notesRouter.post("/", create);
-notesRouter.put("/:nid", update);
-notesRouter.delete("/:nid", destroy);
+productsRouter.get("/", read);
+productsRouter.get("/:pid", readOne);
+productsRouter.post("/", create);
+productsRouter.put("/:pid", update);
+productsRouter.delete("/:pid", destroy);
 
 async function create(req, res, next) {
   try {
     const data = req.body;
-    const one = await notesManager.create(data);
+    const one = await productManager.create(data);
     return res.json({
       statusCode: 201,
       message: "CREATED ID: " + one.id,
@@ -25,7 +25,7 @@ async function create(req, res, next) {
 async function read(req, res, next) {
   try {
     const { category } = req.query;
-    const all = await notesManager.read(category);
+    const all = await productManager.read(category);
     if (all.length > 0) {
       return res.json({
         statusCode: 200,
@@ -43,8 +43,8 @@ async function read(req, res, next) {
 
 async function readOne(req, res, next) {
   try {
-    const { nid } = req.params;
-    const one = await notesManager.readOne(nid);
+    const { pid } = req.params;
+    const one = await productManager.readOne(pid);
     if (one) {
       return res.json({
         statusCode: 200,
@@ -62,9 +62,9 @@ async function readOne(req, res, next) {
 
 async function update(req, res, next) {
   try {
-    const { nid } = req.params;
+    const { pid } = req.params;
     const data = req.body;
-    const one = await notesManager.update(nid, data);
+    const one = await productManager.update(pid, data);
     return res.json({
       statusCode: 200,
       response: one,
@@ -76,8 +76,8 @@ async function update(req, res, next) {
 
 async function destroy(req, res, next) {
   try {
-    const { nid } = req.params;
-    const one = await notesManager.destroy(nid);
+    const { pid } = req.params;
+    const one = await productManager.destroy(pid);
     return res.json({
       statusCode: 200,
       response: one,
@@ -87,4 +87,4 @@ async function destroy(req, res, next) {
   }
 }
 
-export default notesRouter;
+export default productsRouter;
