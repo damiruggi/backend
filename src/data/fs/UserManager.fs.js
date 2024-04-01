@@ -3,7 +3,7 @@ import crypto from "crypto";
 
 class UsersManager {
   constructor() {
-    this.path = "./fs/files/users.json";
+    this.path = "./src/data/fs/files/users.json";
     this.init();
   }
 
@@ -21,10 +21,8 @@ class UsersManager {
   async create(data) {
     try {
       // Validar campos obligatorios
-      if (!data.photo || !data.email || !data.password || !data.role) {
-        throw new Error(
-          "Los campos 'photo', 'email', 'password' y 'role' son obligatorios."
-        );
+      if (!data.email || !data.password) {
+        throw new Error("Los campos 'email', 'password' son obligatorios.");
       }
 
       if (!data.email) {
@@ -37,7 +35,7 @@ class UsersManager {
             "https://cdn-icons-png.freepik.com/512/266/266033.png",
           email: data.email,
           password: data.password,
-          role: data.role || "Editor",
+          role: data.role || 0,
         };
         let all = await fs.promises.readFile(this.path, "utf-8");
         all = JSON.parse(all);
@@ -72,6 +70,27 @@ class UsersManager {
     } catch (error) {
       console.log(error);
       return error;
+    }
+  }
+
+  async update(id, data) {
+    try {
+      let all = await this.read();
+      let one = all.find((each) => each.id === id);
+      if (one) {
+        for (let prop in data) {
+          one[prop] = data[prop];
+        }
+        all = JSON.stringify(all, null, 2);
+        await fs.promises.writeFile(this.path, all);
+        return one;
+      } else {
+        const error = new Error("Not found!");
+        error.statusCode = 404;
+        throw error;
+      }
+    } catch (error) {
+      throw error;
     }
   }
 
