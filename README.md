@@ -16,8 +16,12 @@
 * Implementación y uso de Github
 * Funcionalidades de ECMAScript
 * Clases de ECMAScript
+<<<<<<< HEAD
 * Express
 * Router y Multer
+=======
+* 
+>>>>>>> 9bff9d4f48f5d3f041b3fb4433aa90b3387d084f
 
 ## Dependencias
 
