@@ -12,9 +12,9 @@ class UsersManager {
     if (!exists) {
       const stringData = JSON.stringify([], null, 2);
       fs.writeFileSync(this.path, stringData);
-      console.log("Archivo creado!");
+      console.log("File created!");
     } else {
-      console.log("El archivo ya existe!");
+      console.log("The file already exists!");
     }
   }
 
@@ -22,11 +22,11 @@ class UsersManager {
     try {
       // Validar campos obligatorios
       if (!data.email || !data.password) {
-        throw new Error("Los campos 'email', 'password' son obligatorios.");
+        throw new Error("The 'email' and 'password' fields are required");
       }
 
       if (!data.email) {
-        throw new Error("Ingrese el email");
+        throw new Error("Enter email");
       } else {
         const user = {
           id: crypto.randomBytes(12).toString("hex"),

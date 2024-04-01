@@ -7,7 +7,7 @@ import pathHandler from "./src/middlewares/pathHandler.mid.js";
 
 const server = express();
 const port = 8080;
-const ready = () => console.log("Servidor listo en el puerto " + port);
+const ready = () => console.log("Server ready in port " + port);
 
 server.listen(port, ready);
 server.use(express.json());
@@ -17,13 +17,13 @@ server.use(express.urlencoded({ extended: true }));
 server.get("/", async (req, res) => {
   try {
     return res.status(200).json({
-      response: "API Conectada",
+      response: "Connected API",
       success: true,
     });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      response: "Error en la API",
+      response: "API error",
       success: false,
     });
   }
@@ -174,16 +174,16 @@ server.get("/api/products/:pid", async (req, res) => {
       res.status(404).json({
         statusCode: 404,
         response: null,
-        message: "Producto no encontrado",
+        message: "Product not found",
       });
     }
   } catch (error) {
     // Enviar una respuesta en caso de error
-    console.error("Error al buscar el producto:", error);
+    console.error("Error when searching for the product:", error);
     res.status(500).json({
       statusCode: 500,
       response: null,
-      message: "Error al buscar el producto",
+      message: "Error when searching for the product",
     });
   }
 });

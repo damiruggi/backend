@@ -15,13 +15,13 @@ class ProductsManager {
   create(data) {
     // Verifica si están todos los campos necesarios
     if (!data.title || !data.photo || !data.category || !data.price || !data.stock) {
-      console.error("Falta uno o más campos obligatorios.");
+      console.error("One or more required fields are missing.");
       return;
     }
 
     // Verifica el formato de la foto
     if (!/\.(jpg|png)$/i.test(data.photo)) {
-      console.error("El formato de la foto debe ser JPG o PNG.");
+      console.error("The photo format must be JPG or PNG.");
       return;
     }
 
@@ -34,7 +34,7 @@ class ProductsManager {
       data.stock
     );
     this.#products.push(product);
-    console.log("Producto creado con éxito.");
+    console.log("Successfully created product.");
     return product.id; // Devolver el ID del producto creado
   }
 
@@ -46,7 +46,7 @@ class ProductsManager {
     try {
       const one = this.#products.find((each) => each.id === id);
       if (!one) {
-        throw new Error("No existe el producto");
+        throw new Error("The product does not exist");
       } else {
         return one;
       }
@@ -60,7 +60,7 @@ class ProductsManager {
       const productToDelete = this.readOne(id); // Obtener el producto a eliminar
       if (productToDelete) {
         this.#products = this.#products.filter((each) => each.id !== id);
-        console.log("Producto eliminado");
+        console.log("Product removed");
       }
     } catch (error) {
       console.log(error);
@@ -112,17 +112,17 @@ manager.create({
 });
 
 // Obtener todos los productos
-console.log("Todos los productos:", manager.read());
+console.log("All the products:", manager.read());
 
 // Obtener el producto con ID 2
-console.log("Producto con ID 2:", manager.readOne(2));
+console.log("Product with ID 2:", manager.readOne(2));
 
 // Eliminar el producto con ID 1
 manager.destroy(1);
 console.log(
-  "Después de eliminar el producto con ID 1:",
+  "After deleting the product with ID 1:",
   manager.read()
 );
 
 // Obtener el número total de productos
-console.log("Total de productos:", manager.read().length);
+console.log("Total products:", manager.read().length);

@@ -14,7 +14,7 @@ class Product {
       fs.writeFileSync(this.path, stringData);
       console.log("File created!");
     } else {
-      console.log("El archivo ya existe!");
+      console.log("The file already exists!");
     }
   }
 
@@ -22,7 +22,7 @@ class Product {
     try {
       // Validar campos obligatorios
       if (!data.title) {
-        throw new Error("El campo 'title' es obligatorio.");
+        throw new Error("The 'title' field is required");
       } else {
         const product = {
           id: crypto.randomBytes(12).toString("hex"),

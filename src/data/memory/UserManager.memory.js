@@ -6,25 +6,25 @@ class UserManager {
   create(data) {
     // Verifica si están todos los campos necesarios
     if (!data.photo || !data.email || !data.password || !data.role) {
-      console.error("Falta uno o más campos obligatorios.");
+      console.error("One or more required fields are missing");
       return;
     }
 
     // Verifica el formato de la foto
     if (!/\.(jpg|png)$/i.test(data.photo)) {
-      console.error("El formato de la foto debe ser JPG o PNG.");
+      console.error("The photo format must be JPG or PNG");
       return;
     }
 
     // Verificar el email
     if (!isValidEmail(data.email)) {
-      console.error("El email proporcionado no es válido.");
+      console.error("The email provided is not valid");
       return;
     }
 
     // Verificar la seguridad del password
     if (data.password.length < 6) {
-      console.error("La contraseña debe tener al menos 6 caracteres.");
+      console.error("The password must be at least 6 characters");
       return;
     }
 
@@ -36,7 +36,7 @@ class UserManager {
       role: data.role,
     };
     UserManager.#users.push(user);
-    console.log("Usuario creado con éxito.");
+    console.log("User created successfully");
     return user.id; // Devolver el ID del usuario creado
   }
 
@@ -48,7 +48,7 @@ class UserManager {
     try {
       const one = UserManager.#users.find((each) => each.id === id);
       if (!one) {
-        throw new Error("No existe el usuario");
+        throw new Error("The user does not exist");
       } else {
         return one;
       }
@@ -62,7 +62,7 @@ class UserManager {
       const userToDelete = this.readOne(id); // Obtener el usuario a eliminar
       if (userToDelete) {
         UserManager.#users = UserManager.#users.filter((each) => each.id !== id);
-        console.log("Usuario eliminado");
+        console.log("User Deleted");
       }
     } catch (error) {
       console.log(error);
