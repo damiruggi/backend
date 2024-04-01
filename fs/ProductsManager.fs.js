@@ -1,31 +1,39 @@
-const crypto = require('crypto');
-const fs = require('fs');
+import fs from "fs";
+import crypto from "crypto";
 
 class Product {
-  constructor(id, title, photo, category, price, stock) {
-    this.id = id;
-    this.title = title;
-    this.photo = photo;
-    this.category = category;
-    this.price = price;
-    this.stock = stock;
-  }
-}
-
-class ProductsManagerMemory {
   constructor() {
+    this.path = "./fs/files/products.json";
     this.products = [];
+    this.init();
   }
 
-  generateRandomId() {
-    return crypto.randomBytes(12).toString('hex');
+  init() {
+    const exists = fs.existsSync(this.path);
+    if (!exists) {
+      const stringData = JSON.stringify([], null, 2);
+      fs.writeFileSync(this.path, stringData);
+      console.log("Archivo creado!");
+    } else {
+      console.log("El archivo ya existe!");
+      // Leer los datos del archivo JSON al inicializar
+      const data = fs.readFileSync(this.path, "utf8");
+      this.products = JSON.parse(data);
+    }
   }
 
-  create(data) {
+  async create(data) {
     try {
-      const id = this.generateRandomId();
-      const newProduct = new Product(id, data.title, data.photo, data.category, data.price, data.stock);
+      const newProduct = {
+        id: this.generateRandomId(),
+        title: data.title,
+        photo: data.photo,
+        category: data.category,
+        price: data.price,
+        stock: data.stock,
+      };
       this.products.push(newProduct);
+      await this.saveToFile();
       return newProduct;
     } catch (error) {
       console.error("Error al crear el producto:", error);
@@ -33,7 +41,7 @@ class ProductsManagerMemory {
     }
   }
 
-  read() {
+  async read(category) {
     try {
       return this.products;
     } catch (error) {
@@ -42,9 +50,9 @@ class ProductsManagerMemory {
     }
   }
 
-  readOne(id) {
+  async readOne(id) {
     try {
-      const product = this.products.find(product => product.id === id);
+      const product = this.products.find((product) => product.id === id);
       if (!product) {
         throw new Error("Producto no encontrado");
       }
@@ -55,100 +63,35 @@ class ProductsManagerMemory {
     }
   }
 
-  destroy(id) {
+  async destroy(id) {
     try {
-      const index = this.products.findIndex(product => product.id === id);
+      const index = this.products.findIndex((product) => product.id === id);
       if (index === -1) {
         throw new Error("Producto no encontrado");
       }
       const deletedProduct = this.products.splice(index, 1)[0];
+      await this.saveToFile();
       return deletedProduct;
     } catch (error) {
       console.error("Error al eliminar el producto:", error);
       return null;
     }
   }
-}
 
-class ProductsManagerFS {
-  constructor(filePath) {
-    this.filePath = filePath;
-  }
-
-  
-
-  create(data) {
+  async saveToFile() {
     try {
-      const id = crypto.randomBytes(12).toString('hex');
-      const newProduct = new Product(id, data.title, data.photo, data.category, data.price, data.stock);
-      const products = JSON.parse(fs.readFileSync(this.filePath));
-      products.push(newProduct);
-      fs.writeFileSync(this.filePath, JSON.stringify(products));
-      return newProduct;
+      const stringData = JSON.stringify(this.products, null, 2);
+      fs.writeFileSync(this.path, stringData);
+      console.log("Datos guardados en el archivo JSON");
     } catch (error) {
-      console.error("Error al crear el producto:", error);
-      return null;
+      console.error("Error al guardar los datos en el archivo JSON:", error);
     }
   }
 
-  read() {
-    try {
-      const products = JSON.parse(fs.readFileSync(this.filePath));
-      return products;
-    } catch (error) {
-      console.error("Error al leer los productos:", error);
-      return [];
-    }
-  }
-
-  readOne(id) {
-    try {
-      const products = JSON.parse(fs.readFileSync(this.filePath));
-      const product = products.find(product => product.id === id);
-      if (!product) {
-        throw new Error("Producto no encontrado");
-      }
-      return product;
-    } catch (error) {
-      console.error("Error al buscar el producto:", error);
-      return null;
-    }
-  }
-
-  destroy(id) {
-    try {
-      let products = JSON.parse(fs.readFileSync(this.filePath));
-      const index = products.findIndex(product => product.id === id);
-      if (index === -1) {
-        throw new Error("Producto no encontrado");
-      }
-      const deletedProduct = products.splice(index, 1)[0];
-      fs.writeFileSync(this.filePath, JSON.stringify(products));
-      return deletedProduct;
-    } catch (error) {
-      console.error("Error al eliminar el producto:", error);
-      return null;
-    }
+  generateRandomId() {
+    return crypto.randomBytes(12).toString("hex");
   }
 }
 
-// Crear un archivo JSON con los productos iniciales
-const initialProducts = [];
-for (let i = 0; i < 20; i++) {
-  initialProducts.push({ id: crypto.randomBytes(12).toString('hex'), title: `Producto ${i + 1}`, photo: `/img/producto${i + 1}.jpg`, category: `Categoría ${i % 3}`, price: Math.floor(Math.random() * 100) + 1, stock: Math.floor(Math.random() * 100) + 1 });
-}
-fs.writeFileSync( './fs/files/products.json' , JSON.stringify(initialProducts));
-
-// Ejemplo de uso para ProductsManagerMemory
-const managerMemory = new ProductsManagerMemory();
-
-console.log("Agregando 10 productos en memoria...");
-for (let i = 0; i < 20; i++) {
-  managerMemory.create({ title: `Producto ${i + 1}`, photo: `/img/producto${i + 1}.jpg`, category: `Categoría ${i % 3}`, price: Math.floor(Math.random() * 100) + 1, stock: Math.floor(Math.random() * 100) + 1 });
-}
-console.log("Productos en memoria:", managerMemory.read());
-
-// Ejemplo de uso para ProductsManagerFS
-const managerFS = new ProductsManagerFS('products.json');
-
-console.log("Productos en el sistema de archivos:", managerFS.read());
+const productManager = new Product();
+export default productManager;
