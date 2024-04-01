@@ -1,4 +1,4 @@
-import UserManager from "./fs/UserManager.fs.js";
+import UserManager from "./data/fs/UserManager.fs.js";
 import ProductManager from "./fs/ProductManager.fs.js";
 
 const users = new UserManager();

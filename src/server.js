@@ -1,6 +1,9 @@
 import express from "express";
-import usersManager from "./fs/UserManager.fs.js";
-import productManager from "./fs/ProductsManager.fs.js";
+import usersManager from "./data/fs/UserManager.fs.js";
+import productManager from "./data/fs/ProductsManager.fs.js";
+import indexRouter from "./src/router/index.router.js";
+import errorHandler from "./src/middlewares/errorHandler.mid.js";
+import pathHandler from "./src/middlewares/pathHandler.mid.js";
 
 const server = express();
 const port = 8080;
@@ -131,3 +134,9 @@ server.get("/api/products/:pid", async (req, res) => {
     });
   }
 });
+
+
+//endpoints
+server.use("/", indexRouter);
+server.use(errorHandler);
+server.use(pathHandler);
