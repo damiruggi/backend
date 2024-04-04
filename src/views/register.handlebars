@@ -1,0 +1,50 @@
+<main class="d-flex w-100 flex-grow-1">
+  <section class="d-flex flex-column align-items-center w-100">
+    <h1 class="bg-success-subtle p-2 text-center text-success w-100">REGISTER</h1>
+    <section class="d-flex flex-row w-100">
+  <section class="d-flex flex-wrap align-content-center w-100" style="justify-content: center;">
+    <form style="width: 50%;">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        <label for="email">Email</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="password" placeholder="Password">
+        <label for="password">Password</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="photo" placeholder="Password">
+        <label for="photo">Photo</label>
+      </div>
+      <button type="button" class="btn btn-primary"id="register">REGISTER</button>
+    </form>
+  </section>
+  <section id="users" class="d-flex flex-wrap" style="width: 100%; gap:20px; height: 100px;"></section>
+  </section>
+  </section>
+</main>
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script>
+  const socket = io();
+  socket.on("users", data => {
+    const template = data
+        .map(each => ` 
+<div class="card" style="width: 200px;">
+  <img src="${each.photo}" class="card-img-top" alt="..." style="width: 200px;
+  height: 100px;
+  object-fit: cover;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">${each.email}</li>
+  </ul>
+</div>`)
+        .reverse()
+        .join("")
+    document.querySelector("#users").innerHTML = template
+  })
+  document.querySelector("#register").addEventListener("click", (event) => {
+    const email = document.querySelector("#email").value
+    const password = document.querySelector("#password").value
+    const photo = document.querySelector("#photo").value
+    socket.emit("register", { email, password, photo })
+  })
+</script>
