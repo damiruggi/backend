@@ -26,5 +26,19 @@
     "email": "morena@hotmail.com",
     "password": "fdsfdsda23",
     "role": 1
+  },
+  {
+    "id": "ac8376f0b5db984b9f8867f0",
+    "photo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTEhMVFRUXGBUaGBUWGRkXGhcaGB0YGBgXFRUYHigiHxonHRUWITEiJiktLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0mHyYuLS4tLS0tLS0tLy0tLS0tLS0rLSstLS8vLS0tLS0tKy0tLS0tLS41Li0tLS0tNy0tL//AABEIAL8BCAMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcEBQIDCAH/xAA+EAACAQIDBQYCBwUJAQAAAAABAgADEQQhMQUGEkFhBxMiUXGBkaEUIzJCUrHwYnKCksEzQ1NzorLR4fEV/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAIDBAUB/8QAJxEBAAICAgMAAQMFAQAAAAAAAAECAxESIQQxQVEiYXETFDIzsQX/2gAMAwEAAhEDEQA/ALxiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiJj43H0qK8VaolNfN2Cj4kwMiJCcV2rbJQkfSC5Bt4Edgeqtw2I6gzu2X2m7KrtwjEhDy70NSB/iYBfa94EwicabhgCpBB0INwfQzlAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERIJ2qb6HA0RRoX+lVge7sL92uhqEHnyHX0MDH7Ru0ungb0MOBVxJGeYKUf8y2Zbnw/EjnRO19qYjG1e9xNVqr6AtayjyVAAAPS03uyt2TUJeuSSxJIBzJOZLN55yWYHYlNPsUl9SL/ADMy5PLrWdR22YvCveNz0rGjs92PhRyPMKSPW86quGKkgg5eYI+UvOngDYTEx2x0qCzoG/P4jOVR5k/YXz/58a6sq/d3erG4Ej6PXZVGfdHxUz53pnL3FjL53D3/AKG0QKZ+qxIW7UicmtkWpHmOmov7ysdpbm0mF0uhHK9x8",
+    "email": "damiruggi@gmail.com",
+    "password": "xgddf",
+    "role": 0
+  },
+  {
+    "id": "a65703e3f48226f0a9a744bf",
+    "photo": "https://www.verywellfamily.com/thmb/kpmvioN6pQv9jRsEAu0iUgVlUes=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-638761853-93821460799a4bc5aff3a73212ea2519.jpg",
+    "email": "damiruggi@gmail.com",
+    "password": "xgddf",
+    "role": 0
   }
 ]
