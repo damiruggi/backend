@@ -1,0 +1,16 @@
+<main class="d-flex flex-column align-items-center w-100 flex-grow-1">
+    <h1 class="bg-secondary text-center text-white w-100 mb-3">ALL PRODUCTS</h1>
+
+    <section class="d-inline-flex flex-wrap">
+        {{#each products}}
+        <div class="card" style="width: 18rem; margin: 0.5rem;">
+            <img src="{{this.photo}}" class="card-img-top" alt="...">
+            <div class="card-body" style="align-content: end;">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">Price: ${{this.price}} / Stock: {{this.stock}}</p>
+                <a href="/products/{{this.id}}" class="btn btn-primary w-100">SEE DETAILS</a>
+            </div>
+        </div>
+        {{/each}}
+    </section>
+</main>
