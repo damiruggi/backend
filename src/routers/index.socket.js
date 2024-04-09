@@ -1,10 +1,12 @@
-import usersManager from "../data/fs/UserManager.fs.js";
+import productManager from "../data/fs/ProductsManager.fs.js";
 
 export default async (socket) => {
-  console.log("client id: " + socket.id);
-  socket.emit("users", await usersManager.read());
-  socket.on("register", async (data) => {
-    await usersManager.create(data);
-    socket.emit("users", await usersManager.read());
+  console.log("Product id: " + socket.id);
+  socket.emit("products", await productManager.read());
+  socket.on("product", async (data) => {
+    await productManager.create(data);
+    socket.emit("product", await productManager.read());
   });
 };
+
+

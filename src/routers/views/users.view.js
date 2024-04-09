@@ -3,13 +3,6 @@ import usersManager from "../../data/fs/UserManager.fs.js";
 
 const usersRouter = Router();
 
-usersRouter.get("/real", async (req, res, next) => {
-  try {
-    return res.render("real", { title: "REAL" });
-  } catch (error) {
-    return next(error);
-  }
-});
 usersRouter.get("/register", async (req, res, next) => {
   try {
     return res.render("register", { title: "REGISTER" });
@@ -28,7 +21,7 @@ usersRouter.get("/:uid", async (req, res, next) => {
   try {
     const { uid } = req.params;
     const profile = await usersManager.readOne(uid);
-    return res.render("profile", { title: "REAL", profile });
+    return res.render("profile", { title: "PROFILE", profile });
   } catch (error) {
     return next(error);
   }

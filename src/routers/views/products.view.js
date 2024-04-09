@@ -3,7 +3,7 @@ import productManager from "../../data/fs/ProductsManager.fs.js";
 
 const productsRouter = Router();
 
-productsRouter.get("/real", async (req, res, next) => {
+productsRouter.get("/", async (req, res, next) => {
   try {
     const products = await productManager.read();
     return res.render("products", { title: "PRODUCTS", products });
@@ -11,6 +11,16 @@ productsRouter.get("/real", async (req, res, next) => {
     return next(error);
   }
 });
+
+productsRouter.get("/real", async (req, res, next) => {
+  try {
+    const products = await productManager.read();
+    return res.render("real", { title: "LOAD PRODUCT", products });
+  } catch (error) {
+    return next(error);
+  }
+});
+
 productsRouter.get("/:pid", async (req, res, next) => {
   try {
     const { pid } = req.params;
