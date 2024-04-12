@@ -2,320 +2,320 @@
   {
     "id": "7d1dbed3d4ddcb211ab76d52",
     "title": "Producto 1",
-    "photo": "/img/producto1.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRknqLNxMN3YGCELBnF91OFmr-xkuauhvqe9foxABwyXOkXD4MUUjBIylDbCgDdurSarfaUw_QRK4g4My8KU65kjQQLPfiOFv2T4J_JK7HFVaHHvV5yVzzxhpDegd9Y5lP4-hlMSeE&usqp=CAc",
+    "category": "Zapatillas",
     "price": 45,
     "stock": 11
   },
   {
     "id": "1fdb2637cb40e959f77fe97f",
     "title": "Producto 2",
-    "photo": "/img/producto2.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQbdIhMxJuXQx8quI6740KUoTyLxuJql4Pfnz5WS5bTPUC2NpQ5VpqT-SK0ovTTOhH_8k5qeZGB0E5fgfDCY186ih1l1_C88XtvJGE016KLpkMOt62xNt-1DYD7Y-E9Ewb-Uj86SK0&usqp=CAc",
+    "category": "Remeras",
     "price": 50,
     "stock": 14
   },
   {
     "id": "a742c2f55fa2680f8616a0e7",
     "title": "Producto 3",
-    "photo": "/img/producto3.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQu0veBgcytrDwmstMTa-r288N4vRKQWhZaM1HvD5T_NSBuifUnHglNM8z_YFirQgVATd8qPuDLS_F9MfXPttuW10UegFE2eCJgJHIzAh5GG-pG_42Ufk2j&usqp=CAc",
+    "category": "Buzos",
     "price": 35,
     "stock": 93
   },
   {
     "id": "4182aceaf5929859a9d46646",
     "title": "Producto 4",
-    "photo": "/img/producto4.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQggdIgVvd0e1ompoVNs9iy7ytp6UmcNoJsJnoQ1Zep0iu5kEbe_tBkShHiul2RWFlm2riTqOfo-uiY1_7nI89kSUU0sCYpidocDuzV2pRlwH1Gj1g1qsaFKuivXNQZH1ngMqDAer8&usqp=CAc",
+    "category": "Zapatillas",
     "price": 72,
     "stock": 46
   },
   {
     "id": "bd833069a40ffdb68b9068ea",
     "title": "Producto 5",
-    "photo": "/img/producto5.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR-fvXje4NYsyhPe7-jvzch7VLaaHyfja0AHQMJV0i5q6yiSu_bfBsWeYy_sDXOO7sRNpV41lIBKshd5t2SYRsYu7peR_kE5-bXVroIAAROPfGozrJlHXQX8hqP1zvbR0FryWAx99o&usqp=CAc",
+    "category": "Remeras",
     "price": 16,
     "stock": 87
   },
   {
     "id": "08900147cc85a505cced9a1d",
     "title": "Producto 6",
-    "photo": "/img/producto6.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSImL0lGheSGSyRkLyw88iKTpPM80SsDD9G0hw7rFkA5PU72U2t9pk0cLZJ1twOZ1lneAf-kBGy7giSnPRem7Xq9HZxbbBIzRkRDuMmDiKeDdmfuvtrGumtpnM&usqp=CAc",
+    "category": "Buzos",
     "price": 27,
     "stock": 46
   },
   {
     "id": "fcd1851cfe3cc9cc0aa590ab",
     "title": "Producto 7",
-    "photo": "/img/producto7.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ8vRSw9yya5Ygx5tLfgUikGhGnogM6iGY1dZFAfS69kch61GtUP9C8pOmc9F6csBif1qmeOc8uBEPvGzKMW4e8hH9TF7dIWHWVIU-YCuegPKdI_IJ1X-nb3sTsMDqAOplk4kjK7LQ&usqp=CAc",
+    "category": "Zapatillas",
     "price": 85,
     "stock": 5
   },
   {
     "id": "213f3cf05557939c99db6360",
     "title": "Producto 8",
-    "photo": "/img/producto8.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSkc1WvQMIQXFn5EHgsW6DgHV8ci7IbeHME1yH09nND3f8_h_7trOao8Ht9rtB6fArWIJCH8iAvKJkkeYSyshAAue9YAeEZ5xPY-4WX0PoQ3xd9YTBU0ev3nLSNBSuKqSzZ2lLM4nU&usqp=CAc",
+    "category": "Remeras",
     "price": 88,
     "stock": 21
   },
   {
     "id": "29522e09f382f66f6770db7f",
     "title": "Producto 9",
-    "photo": "/img/producto9.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQRi14D9W0sNzt5RBslxBw8tgSQkpF0FCgQRCrFyim4WdwMaXCc_zWsTapyi-bbUepAoOrI6fvsBi09DEkcGi8YZkMcUw5DwQXsGKL9NX2eqLAdghrol553CKAFhlHYpf6b_GDEHpo&usqp=CAc",
+    "category": "Buzos",
     "price": 8,
     "stock": 35
   },
   {
     "id": "05078caf958d943246074687",
     "title": "Producto 10",
-    "photo": "/img/producto10.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSH5DqQ6j74d7Ik5LjQbFDukfhKyFyHbrsikz-XbsHX94An9K4djJHrrPUtdB7zfKEQEMrxM_m2i9dmMMym3ga1y5F3FuO-BcnKn5otk7oZ54pBODE0Sl1a78okdOTX6f00LQaGWFo&usqp=CAc",
+    "category": "Zapatillas",
     "price": 36,
     "stock": 5
   },
   {
     "id": "c3fed1b9726d0657c6b5a4a2",
     "title": "Producto 11",
-    "photo": "/img/producto11.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRgx8WFTanl0wtUMY9Eawh0-WrZHOkMvfm1bvTOJTd83nWT90SPJT5kV0UdfNMMX6rBtH3Ir1cooEwHNl1bKU0OoGnd0ud5JzodSpaWBYbO44dssl2aWvPRgFqzpdTODdzT_x_5oRLY&usqp=CAc",
+    "category": "Remeras",
     "price": 52,
     "stock": 68
   },
   {
     "id": "e8f0d1536e14c5a8262fdfb0",
     "title": "Producto 12",
-    "photo": "/img/producto12.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSW1NoSRXRptQxEpwlDFixfOsIwjONSWXeYbhPG28aRmxOScIiiHU3PEA2GKfggrTc2srcnK5su-tQLoIqQDfaKBMiqqmd7FkfuOCVHWszeFiumvEV5pAJpYgLVSC0VByfvyWzUcENL&usqp=CAc",
+    "category": "Buzos",
     "price": 10,
     "stock": 8
   },
   {
     "id": "51be6fcb9064a7674cbe5065",
     "title": "Producto 13",
-    "photo": "/img/producto13.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSaEspNw9T6sTxW3cSko8SRBwLRTxDJuIi8Jl-M1WYTRgtbksaSt4N6w3WOOfJs0NQk36aD5-6fKjmGwq5p_xy02_XzbjvKlKctqSQ4KeYa2r8TWhwYCN5MBUAecRKsaYTPDFfxQA&usqp=CAc",
+    "category": "Zapatillas",
     "price": 11,
     "stock": 17
   },
   {
     "id": "35bc9b72046c175ae4682b69",
     "title": "Producto 14",
-    "photo": "/img/producto14.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRWkoibhzs0sOt4IB-t0Ao2xhasL-nFcwFwaV_xWKj0nmO1PdHYrVbyawLlVnJaP4xYZa4Bu2VjgOFXx5ZLEZ40q93_eX5NhfaiuKxDBaln5E_w0LEFctSvqw&usqp=CAc",
+    "category": "Remeras",
     "price": 76,
     "stock": 68
   },
   {
     "id": "6af01902c3c098aa0f5f639d",
     "title": "Producto 15",
-    "photo": "/img/producto15.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRxBKfhpcuSqlBc-ib-82z4vbmp0WBLhSMAjfWkuiNn46YH15SPOQu7EWM_tl2wMmgXuiODl9IMPXJl800ct5JYBUEMkeRURhEvBtsDZmpc&usqp=CAc",
+    "category": "Buzos",
     "price": 4,
     "stock": 85
   },
   {
     "id": "a95e63d33830d5c3fe905d01",
     "title": "Producto 16",
-    "photo": "/img/producto16.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS7Hme1M5bCeo12TpIDvaEvY7Tp5Rezwvos0YGHWLwAv25qLw9QnDCsXkkq4Fd9efsNQm3Xs_XYnPuojiJNff5_G1P5LdZVKPnXbpOB5mV9oMzpeofChWRjWPGPkG8h9GP21t4HTg&usqp=CAc",
+    "category": "Zapatillas",
     "price": 34,
     "stock": 8
   },
   {
     "id": "af94a903a7b3046f9d1f9fa3",
     "title": "Producto 17",
-    "photo": "/img/producto17.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRTZVDVsxFMP1pFdPQYaLcTlbimWW0zHH60GL7iShhZSo5MwRUMClGsU1SNlUpRk1uDlpAG3E4FP4W0g2uDNnnRLD3mXMTSyU9t1KnSfjswhbJ9ly540ytuiJ2XKKGeBG_50Jl4jZs&usqp=CAc",
+    "category": "Remeras",
     "price": 93,
     "stock": 17
   },
   {
     "id": "f4cfb702bc04a868b7787ca3",
     "title": "Producto 18",
-    "photo": "/img/producto18.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQfqMX0R3tGox-mIR_IYnah9R8t4lWqXY9aQkV-roqqN32NIm0nRztYfGi_ZUsPqm-XheIkGuDi1elfwQd5bmZTCI2uj7ODt9v1lRE5ByE3bS1MMAmUa_Gxd38cEr1FsNAAlPUOwZA&usqp=CAc",
+    "category": "Buzos",
     "price": 17,
     "stock": 89
   },
   {
     "id": "1ac39118886cddcf9b756816",
     "title": "Producto 19",
-    "photo": "/img/producto19.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRSUYhrJIVc7c4RSr_O5w4lRuNiyXsbC-3ETmCcr88EvIkVlNOWkGLTUmWan4mWA-fwCa5EC4ZOsP-sxvKFA8V52o_Wzd0oIX2uT1YGq82wLr1xgbdOOY6gElSCzZ_wAHIWiAtyaZM&usqp=CAc",
+    "category": "Zapatillas",
     "price": 81,
     "stock": 46
   },
   {
     "id": "8eac8495305d3a771726054a",
     "title": "Producto 20",
-    "photo": "/img/producto20.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRG5pL82C_jRRUQgLWaK-CHPAlc18V3v26hNgx2l7SPPeSnOscm6Zk1U5BhahJ5x96CEXU5SQyp95jDcJ6nohAqfbdikYzMB5p7b71qHbVTPSnFyYgvQaN2sa5S8AHVSeonCo8zFg&usqp=CAc",
+    "category": "Remeras",
     "price": 53,
     "stock": 14
   },
   {
     "id": "0f183245529a3c5c6bb78b0f",
     "title": "Producto 21",
-    "photo": "/img/producto21.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRJRGQzuXF3-3Xxha5tOROFuN6CZOh7a3DIxbgHh9FULFlIyqnuL7yIPyw-E1leLzqqhYNOipJWFJjTpME2xMb_R_nu1tK8B_RBVaYTdaE3Pjbbk3BMsklSne3g2XiP4Qp3XkAcUfuf&usqp=CAc",
+    "category": "Buzos",
     "price": 17,
     "stock": 89
   },
   {
     "id": "f5fb9fc0cf5783d70f73df33",
     "title": "Producto 22",
-    "photo": "/img/producto22.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQuEeRFeg8OoRb9cBhA9gImqRM2SLtfHp8cbxb2PhknMIzzL6CsbytBXhvSAgKwFKteXr1Knf6Np2jihxPytiFCFLsDbhr8m5k6_FPNxYUzMRMuQ8uKmMV8aaaD_evtLitQKbJxB8I&usqp=CAc",
+    "category": "Remeras",
     "price": 22,
     "stock": 9
   },
   {
     "id": "b473210ff1bf77b386333402",
     "title": "Producto 23",
-    "photo": "/img/producto23.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSkMYMxpZojAt9qeGOfVyn-B__HvNOsKjaNR2mlV6WEnMhaSe5ksdGfvxWVs3kz5xW63dR9cPTrEd3hqJvHJNzz1o4Lqu2SDukJPfB6ddP6paP1-l3fR8GTAg&usqp=CAc",
+    "category": "Remeras",
     "price": 13,
     "stock": 5
   },
   {
     "id": "4172d50431667b83e99d8df4",
     "title": "Producto 24",
-    "photo": "/img/producto24.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcThZJ9LpozAZh-A6pt_ET8uPFoB0gXIfAuW3NhGPBCQzAh8gv3Gv1-ohdvGjMMDNFEaSEfjuHjH-PZJ4ZsUdHhYXVMBwQCln-MFvxSujOClWI1kyD9ZVpNAT9WflUvwdrJNz7lx0Os&usqp=CAc",
+    "category": "Remeras",
     "price": 33,
     "stock": 11
   },
   {
     "id": "5113241a60b3a94892f9b26e",
     "title": "Producto 25",
-    "photo": "/img/producto25.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSrbBJ-Kz4uH0qDtrVmoqTwsBKzsX51MKupnL9YB18XFaGK8gzwxbkuuw9PM8xJMkQJJ3QaYEaDI63m29OHAC5tYsvn3eqjv3tdVWZIYHeb9HsyqFMSynT9WdyKKglDHkfMq36ZgFg&usqp=CAc",
+    "category": "Zapatillas",
     "price": 31,
     "stock": 1
   },
   {
     "id": "b2341b2c9502109ee2cc1906",
     "title": "Producto 26",
-    "photo": "/img/producto26.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSDOwa1QeFVICD72rBo9RSr5WXlifyBEnVsT_ojsgR_1tZODS1bu2iAHn4JaC9jsrnPdKzLQOyfiF0d_pjFQzKpKyqKrDk0zAi88PTRy0SiH0V4il4-Ov9LOC4jqddnQ9GO-jGZw6c&usqp=CAc",
+    "category": "Zapatillas",
     "price": 71,
     "stock": 34
   },
   {
     "id": "961d8eb0ffab5aee3b0dc39c",
     "title": "Producto 27",
-    "photo": "/img/producto27.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTDdrNACbwOF8w4O0R5NXJff904eo5H2mjnWF99x6vWZpkkXO_cS6FzkdDmVHjBk-8eQJWPI1x0HwUG4-2pg2eYwU_oa8kEepO76CqgClFm-oQ_6-qASo2fUkuNHBIu4dmqMSOsyHg&usqp=CAc",
+    "category": "Zapatillas",
     "price": 74,
     "stock": 4
   },
   {
     "id": "2528ea26c62697b59b1ee47b",
     "title": "Producto 28",
-    "photo": "/img/producto28.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ79T1Esjn93jXPu-wr_DfpWcx7XU06hd5d43gHqk6l5-s2_6PBHW_0Tosd72k_uJNpxUsWvCsDt-ibJmOE0MoNJsfQ4UF3XVHlGrFcHjVCy0I2075Lw2cZ-DPQ__ikjYDJGuJ0MA&usqp=CAc",
+    "category": "Remeras",
     "price": 123,
     "stock": 45
   },
   {
     "id": "9f71a809db631a968b76f1a8",
     "title": "Producto 29",
-    "photo": "/img/producto29.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3XLRuEdv7gM7GDHOD5YlNk4wW87EZ2lVd8eGclh3Ps0x5EzIx5knHLYMyARuwgkMhjVVNCw5ciKkfhZC9Lpw5zpZYAJFKyfdKt6l94g3gaP_fXLYvdYMOvvuIqmOJ_CtacLs5ug&usqp=CAc",
+    "category": "Remeras",
     "price": 13,
     "stock": 11
   },
   {
     "id": "0a103b9d912e2044929e35d5",
     "title": "Producto 30",
-    "photo": "/img/producto30.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTfSbVXsekHPZIMQH1X1rjWitovjlxEjb0Z1gmfPoMM5MJ9pmOtQoMAa6L-7pkVns8AOUcyYcC7rzm-8HZiZsuRXAnFKrhI9g67UXPBNVbn8QTz82fpw4gxinJdO9DDgDo6i4iB_w&usqp=CAc",
+    "category": "Zapatillas",
     "price": 44,
     "stock": 18
   },
   {
     "id": "44480dfb7d2244ebd2736a26",
     "title": "Producto 31",
-    "photo": "/img/producto31.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQthGfaiAyqn6eP8dcxdcf_6doZgqXWJtwUciTqZqHzYSL8ZBIKNt-Znaf2dE1SZLfoVN5mEYdmInGsX95eWd172KBqpiObVi19Cwt1nYmmOioZQBgPGXO7Fz7gKQhKzqswTuZeFg&usqp=CAc",
+    "category": "Buzos",
     "price": 23,
     "stock": 1
   },
   {
     "id": "f6a9d1d812328b6c2208aa4c",
     "title": "Producto 32",
-    "photo": "/img/producto32.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQga1Fo4fnFELVMfldepln3RQZcJIISaQTjVVJ6VgIAe3wqLcVlQvF8JIq7lyxJN1UtXVjneRCAB3Umkg_dvP0P-xvrzjEtli7C_YiKD9stUTjIl6JxOvGZMIILt1EMvd1cyacFO2s&usqp=CAc",
+    "category": "Remeras",
     "price": 13,
     "stock": 7
   },
   {
     "id": "33dc226edeb188a9cb4b581b",
     "title": "Producto 33",
-    "photo": "/img/producto33.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRuQYskBECpuFEvkjTm23O4hOecNFr_dK9qkPftYljVXKq8MboRSgNffPugtZUu5L50XRzRrXfculM8lQlIOAuvi3Tm97KLJNrQm3Kdc88UcO0yIheJSAPJ8HCObyXmrAFjuv1zQWE&usqp=CAc",
+    "category": "Zapatillas",
     "price": 44,
     "stock": 2
   },
   {
     "id": "8b3694329ed6e40ba74a5744",
     "title": "Producto 34",
-    "photo": "/img/producto34.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ0cM7PwEY9ou2feF-QwgV8R4Xxbo1k0jiWCzXqUXDrPwqv518V_4L4-VRc-I5SqQKe9WCjGpDpXTUVOUxfGEyb_9m3GxLZOpRhaOQh2PGtkInIm1YTjoj-A_lmmMjtBehWyU1jX2NLAQ&usqp=CAc",
+    "category": "Buzos",
     "price": 56,
     "stock": 22
   },
   {
     "id": "b534f6302476b086f9324e47",
     "title": "Producto 35",
-    "photo": "/img/producto35.jpg",
-    "category": "Categoría 2",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQH0LkOKolo1DKuWPK_Wh9RF9r3N65M17ixHKJEVuMspe75qGj6vRgOHqYYMxrk6NjnxD9oHc3nIPM6x-VV69sYbasiyaWFCWgCrKi_z6DU8wRuFo8kwN0uVb5n6UH8qLglhz1yUQ&usqp=CAc",
+    "category": "Buzos",
     "price": 61,
     "stock": 2
   },
   {
     "id": "ba5ff2dab757618a330cc569",
     "title": "Producto 36",
-    "photo": "/img/producto36.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ0Y4G4OswbI9bBAHlVnve6_H-NGA_K9MIR3bHde875dgSN69hyoSa2Y3BszQ221C2CFHH7nK4BpqgD8g3-xk8lZ4nIEJRAhBgaj1qdhx_OfrQRfqy6q43HV2p9EuyhJ6GdRdGJZ6o&usqp=CAc",
+    "category": "Remeras",
     "price": 78,
     "stock": 7
   },
   {
     "id": "ed40ea68c7c034ad4c4d1bf2",
     "title": "Producto 37",
-    "photo": "/img/producto37.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQmyO1FcyFSvRsqWuc4LeIi2MAfk0xfKUp3BSPJDKqIhR3-Fwj1c5nSt3svkz0R-7UjeH6b0QVq0Qk09nAF2a39N-C76AvHskryjQ46KPXkLs0NzmlvKvAdHVq8UJcwXYImCA9ySrLBAQ&usqp=CAc",
+    "category": "Remeras",
     "price": 82,
     "stock": 46
   },
   {
     "id": "e9c7a1c3603671456ddd6643",
     "title": "Producto 38",
-    "photo": "/img/producto38.jpg",
-    "category": "Categoría 1",
+    "photo": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQFlrgD5-ELmZdl0fLD6mBKSk2txZH_0OnztScEqeKWMLwvgm-XIKghPWYVu1GZjg0kCvQ9ZKEB6f_MhjgSfBhZ_B1FqaD7mGtDtqJelWZSdTlWGl1kPq3UUI4-EkhpC3Uma2H_8442&usqp=CAc",
+    "category": "Remeras",
     "price": 62,
     "stock": 24
   },
   {
     "id": "5d2537b01d588be82f205b15",
     "title": "Producto 39",
-    "photo": "/img/producto39.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR64QLnI0yWWVunM0jHkU7LBgHBKe1_S0bLJHk9Py8icfuUb-XiyBjFyQcuK4t3jKG_fQHarFbWntoIEtD4JA8jg_E3BRPF3D9pQPjdZynm7-ji7_fcKc-GRNo2lIPydArqUCrEJg&usqp=CAc",
+    "category": "Zapatillas",
     "price": 23,
     "stock": 2
   },
   {
     "id": "de080d30580b37c860e0e3f1",
     "title": "Producto 40",
-    "photo": "/img/producto40.jpg",
-    "category": "Categoría 0",
+    "photo": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSj8pav_Pe8HEdYwcD2h2XCKCjqOJEae9O52l36VwA83voIKL10fVDtcuE95Eq-BxS8HoKsHdkUf2q7_FZ4nXYk4fJcHAMzjvJEQN2MDLA8D9IY8CWOW5NLOOtlXy2RftLceTwxLw&usqp=CAc",
+    "category": "Zapatillas",
     "price": 33,
     "stock": 54
   }
