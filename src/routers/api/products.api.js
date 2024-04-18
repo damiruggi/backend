@@ -1,5 +1,6 @@
 import { Router } from "express";
-import productManager from "../../data/fs/ProductsManager.fs.js";
+//import productManager from "../../data/fs/ProductsManager.fs.js";
+import productManager from "../../data/mongo/Products.Manager.mongo.js";
 import isPhoto from "../../middlewares/isPhoto.mid.js"
 import uploader from "../../middlewares/multer.mid.js"
 

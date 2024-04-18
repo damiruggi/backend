@@ -1,8 +1,8 @@
 import { Router } from "express";
-import usersManager from "../../data/fs/UserManager.fs.js";
+//import usersManager from "../../data/fs/UserManager.fs.js";
+import usersManager from "../../data/mongo/UsersManager.mongo.js";
 
-const usersRouter = Router()
-
+const usersRouter = Router();
 
 usersRouter.get("/", read);
 usersRouter.get("/:uid", readOne);
@@ -88,5 +88,4 @@ async function destroy(req, res, next) {
   }
 }
 
-
-export default usersRouter
+export default usersRouter;
