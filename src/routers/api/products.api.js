@@ -1,13 +1,11 @@
 import { Router } from "express";
-import productManager from "../../data/fs/ProductsManager.fs.js";
-import isPhoto from "../../middlewares/isPhoto.mid.js"
-import uploader from "../../middlewares/multer.mid.js"
+import productManager from "../../data/mongo/managers/Products.Manager.mongo.js";
 
 const productsRouter = Router();
 
 productsRouter.get("/", read);
 productsRouter.get("/:pid", readOne);
-productsRouter.post("/", uploader.single("photo"), isPhoto, create);
+productsRouter.post("/", create);
 productsRouter.put("/:pid", update);
 productsRouter.delete("/:pid", destroy);
 
