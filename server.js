@@ -12,8 +12,8 @@ import __dirname from "./utils.js";
 import dbConnect from "./src/utils/dbConnect.utils.js";
 
 //Chequeo que anda Mongo
-console.log("Todas las variables de entorno" + process.env);
-console.log(process.env.MONGO_URI);
+//console.log("Todas las variables de entorno" + process.env);
+//console.log(process.env.MONGO_URI);
 
 const server = express();
 const port = process.env.PORT || 9000;
