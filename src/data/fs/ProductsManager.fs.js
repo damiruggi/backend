@@ -14,7 +14,7 @@ class Product {
       fs.writeFileSync(this.path, stringData);
       console.log("File created!");
     } else {
-      console.log("The file already exists!");
+      //console.log("The file already exists!");
     }
   }
 
