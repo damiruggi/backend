@@ -1,4 +1,4 @@
-import Cart from "../models/cart.model.js";
+import Cart from "../models/carts.model.js";
 import Manager from "../Manager.mongo.js";
 
 const cartsManager = new Manager(Cart);

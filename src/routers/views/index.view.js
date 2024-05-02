@@ -1,10 +1,12 @@
 import { Router } from "express";
 import productsRouter from "./products.view.js";
 import usersRouter from "./users.view.js";
+import cartsRouter from "./carts.view.js";
 import productManager from "../../data/fs/ProductsManager.fs.js";
 
 const viewsRouter = Router();
 
+viewsRouter.use("/carts", cartsRouter);
 viewsRouter.use("/products", productsRouter);
 viewsRouter.use("/users", usersRouter);
 viewsRouter.get("/", async (req, res, next) => {
