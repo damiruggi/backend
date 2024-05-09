@@ -318,5 +318,13 @@
     "category": "Zapatillas",
     "price": 33,
     "stock": 54
+  },
+  {
+    "id": "82b67d9f1b4d3e41be8de09e",
+    "title": "sdfdsf",
+    "photo": "https://getuikit.com/v2/docs/images/placeholder_600x400.svg",
+    "category": "Zapatillas",
+    "price": "45",
+    "stock": "11"
   }
 ]
