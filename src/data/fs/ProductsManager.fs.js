@@ -27,8 +27,8 @@ class Product {
         const product = {
           id: crypto.randomBytes(12).toString("hex"),
           title: data.title,
-          photo:
-            data.photo ||
+          images:
+            data.images ||
             "https://getuikit.com/v2/docs/images/placeholder_600x400.svg",
           category: data.category || "Zapatillas",
           price: data.price || 1,

@@ -19,6 +19,14 @@ class Manager {
       throw error;
     }
   }
+  async readByEmail(email) {
+    try {
+      const one = await this.Model.findOne({ email });
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }
   async paginate({filter, opts}) {
     try {
       const all = await this.Model.paginate(filter, opts);
