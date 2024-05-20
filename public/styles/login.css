@@ -37,3 +37,22 @@
 .login-button:hover {
   background: #ff5151;
 }
+
+.google-button {
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+  width: 280px;
+  padding: 5px;
+  margin: 5px 20px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  color: #ff3b3c;
+  background-color: white;
+  border: solid #ff3b3c 1px;
+}
+
+.google-button:hover {
+  background: #fafafa;
+}

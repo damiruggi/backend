@@ -31,13 +31,15 @@
       <span class="hero-span">in</span>
     </article>
   </section>
-  <main>
+  <main class="d-flex flex-column">
     <form class="login-form">
       <input class="login-input" placeholder="E-mail" type="text" name="email" id="email">
       <input class="login-input" placeholder="Passowrd" type="password" name="password" id="password">
       <input class="login-button" type="button" id="login" value="Log in!">
       <p>Don't have an account? <a href="/register.html">Register!</a></p>
     </form>
+    <br>
+    <button class="google-button " id="login-button">Iniciar sesión con Google</button>
   </main>
   <footer>
     <div id="footer" class="footer-container"></div>
@@ -46,5 +48,10 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./scripts/login.js" type="module"></script>
+<script>
+  document.getElementById('login-button').addEventListener('click', () => {
+    window.location.href = 'http://localhost:8080/api/sessions/google';
+  });
+</script>
 
 </html>
