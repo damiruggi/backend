@@ -1,8 +1,8 @@
 class Product {
-  constructor(id, title, photo, category, price, stock) {
+  constructor(id, title, images, category, price, stock) {
     this.id = id;
     this.title = title;
-    this.photo = photo;
+    this.images = images;
     this.category = category;
     this.price = price;
     this.stock = stock;
@@ -14,13 +14,13 @@ class ProductsManager {
 
   create(data) {
     // Verifica si están todos los campos necesarios
-    if (!data.title || !data.photo || !data.category || !data.price || !data.stock) {
+    if (!data.title || !data.images || !data.category || !data.price || !data.stock) {
       console.error("One or more required fields are missing.");
       return;
     }
 
     // Verifica el formato de la foto
-    if (!/\.(jpg|png)$/i.test(data.photo)) {
+    if (!/\.(jpg|png)$/i.test(data.images)) {
       console.error("The photo format must be JPG or PNG.");
       return;
     }
@@ -28,7 +28,7 @@ class ProductsManager {
     const product = new Product(
       crypto.randomBytes(12).toString("hex"),
       data.title,
-      data.photo,
+      data.images,
       data.category,
       data.price,
       data.stock
@@ -73,7 +73,7 @@ const manager = new ProductsManager();
 // Agregar productos
 manager.create({
   title: "Joystick",
-  photo: "/img/Joystick.jpg",
+  images: "/img/Joystick.jpg",
   category: "Tecnologia",
   price: 35,
   stock: 12
@@ -81,7 +81,7 @@ manager.create({
 
 manager.create({
   title: "Teclado",
-  photo: "/img/Teclado.jpg",
+  images: "/img/Teclado.jpg",
   category: "Tecnologia",
   price: 45,
   stock: 10
@@ -89,7 +89,7 @@ manager.create({
 
 manager.create({
   title: "Zapatillas",
-  photo: "/img/Zapatillas.jpg",
+  images: "/img/Zapatillas.jpg",
   category: "Ropa",
   price: 60,
   stock: 15
@@ -97,7 +97,7 @@ manager.create({
 
 manager.create({
   title: "Pantalon",
-  photo: "/img/Pantalon.jpg",
+  images: "/img/Pantalon.jpg",
   category: "Ropa",
   price: 40,
   stock: 18
@@ -105,7 +105,7 @@ manager.create({
 
 manager.create({
   title: "Televisor",
-  photo: "/img/Televisor.jpg",
+  images: "/img/Televisor.jpg",
   category: "Tecnologia",
   price: 150,
   stock: 5
