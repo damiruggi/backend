@@ -66,7 +66,3 @@ server.use("/", indexRouter);
 server.use(errorHandler);
 server.use(pathHandler);
 
-//endpoints
-server.use("/", indexRouter);
-server.use(errorHandler);
-server.use(pathHandler);
