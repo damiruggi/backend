@@ -18,7 +18,6 @@ document.querySelector("#register").addEventListener("click", async () => {
     password: document.querySelector("#password").value,
     photo: document.querySelector("#photo").value,
     age: document.querySelector("#age").value,
-    role: document.querySelector("#role").value,
   };
   const opts = {
     method: "POST",

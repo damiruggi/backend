@@ -1,19 +1,21 @@
 import { Router } from "express";
-import productManager from "../../data/mongo/Products.Manager.mongo.js";
+import productsManager from "../../data/mongo/ProductsManager.mongo.js";
+import isText from "../../middlewares/isText.mid.js";
+import isValidAdmin from "../../middlewares/isValidAdmin.mid.js";
 
 const productsRouter = Router();
 
 productsRouter.get("/", read);
 productsRouter.get("/paginate", paginate);
-productsRouter.get("/:pid", readOne);
-productsRouter.post("/", create);
-productsRouter.put("/:pid", update);
-productsRouter.delete("/:pid", destroy);
+productsRouter.get("/:nid", readOne);
+productsRouter.post("/", isValidAdmin, isText, create);
+productsRouter.put("/:nid", update);
+productsRouter.delete("/:nid", destroy);
 
 async function create(req, res, next) {
   try {
     const data = req.body;
-    const one = await productManager.create(data);
+    const one = await productsManager.create(data);
     return res.json({
       statusCode: 201,
       message: "CREATED ID: " + one.id,
@@ -26,7 +28,7 @@ async function create(req, res, next) {
 async function read(req, res, next) {
   try {
     const { category } = req.query;
-    const all = await productManager.read(category);
+    const all = await productsManager.read(category);
     if (all.length > 0) {
       return res.json({
         statusCode: 200,
@@ -45,27 +47,27 @@ async function read(req, res, next) {
 async function paginate(req, res, next) {
   try {
     const filter = {};
-    const opts = {};
+    const opts = { page: 1, limit: 9, lean: true, sort: { title: 1 } };
     if (req.query.limit) {
       opts.limit = req.query.limit;
     }
     if (req.query.page) {
       opts.page = req.query.page;
     }
-    if (req.query.user_id) {
-      filter.user.id = req.query.user_id;
+    if (req.query.title) {
+      filter.title = new RegExp(req.query.title, "i")
     }
-    const all = await productManager.paginate({ filter, opts });
+    const all = await productsManager.paginate({ filter, opts });
     return res.json({
       statusCode: 200,
       response: all.docs,
       info: {
         totalDocs: all.totalDocs,
         page: all.page,
-        limit: all.limit,
         totalPages: all.totalPages,
-        nextPage: all.nextPage,
+        limit: all.limit,
         prevPage: all.prevPage,
+        nextPage: all.nextPage,
       },
     });
   } catch (error) {
@@ -75,8 +77,8 @@ async function paginate(req, res, next) {
 
 async function readOne(req, res, next) {
   try {
-    const { pid } = req.params;
-    const one = await productManager.readOne(pid);
+    const { nid } = req.params;
+    const one = await productsManager.readOne(nid);
     if (one) {
       return res.json({
         statusCode: 200,
@@ -94,9 +96,9 @@ async function readOne(req, res, next) {
 
 async function update(req, res, next) {
   try {
-    const { pid } = req.params;
+    const { nid } = req.params;
     const data = req.body;
-    const one = await productManager.update(pid, data);
+    const one = await productsManager.update(nid, data);
     return res.json({
       statusCode: 200,
       response: one,
@@ -108,8 +110,8 @@ async function update(req, res, next) {
 
 async function destroy(req, res, next) {
   try {
-    const { pid } = req.params;
-    const one = await productManager.destroy(pid);
+    const { nid } = req.params;
+    const one = await productsManager.destroy(nid);
     return res.json({
       statusCode: 200,
       response: one,
