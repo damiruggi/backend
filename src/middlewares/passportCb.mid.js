@@ -9,7 +9,7 @@ const passportCb = (strategy) => (req, res, next) => {
       });
     }
     req.user = user;
-    next();
+    next(user);
   })(req, res, next);
 };
 

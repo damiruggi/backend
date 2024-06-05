@@ -82,7 +82,7 @@ sessionsRouter.get(
   passport.authenticate("google", { session: false }),
   (req, res, next) => {
     try {
-      return res.json({ statusCode: 200, message: "Logged in with google!" });
+      return res.redirect('/');
     } catch (error) {
       return next(error);
     }

@@ -100,11 +100,11 @@ passport.use(
           };
           user = await usersManager.create(user);
         }
-        req.session.email = user.email;
-        req.session.online = true;
-        req.session.role = user.role;
-        req.session.photo = user.photo;
-        req.session.user_id = user._id;
+        //req.session.email = user.email;
+        //req.session.online = true;
+        //req.session.role = user.role;
+        //req.session.photo = user.photo;
+        //req.session.user_id = user._id;
         return done(null, user);
       } catch (error) {
         return done(error);
