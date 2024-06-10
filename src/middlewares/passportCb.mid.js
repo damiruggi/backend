@@ -1,16 +1,20 @@
 import passport from "passport";
 
-const passportCb = (strategy) => (req, res, next) => {
-  passport.authenticate(strategy, { session: false }, (err, user, info) => {
-    if (err || !user) {
-      return res.status(401).json({
-        statusCode: 401,
-        message: info ? info.message : "Authentication failed",
+function passportCb(strategy) {
+  return (req, res, next) => {
+    passport.authenticate(strategy, (error, user, info) => {
+      if (error) {
+        return next(error);
+      }
+      if (user) {
+        req.user = user;
+        return next();
+      }
+      return res.json({
+        statusCode: info.statusCode || 401,
+        message: info.message ? info.message : info.toString,
       });
-    }
-    req.user = user;
-    next(user);
-  })(req, res, next);
-};
-
+    })(req, res, next);
+  };
+}
 export default passportCb;

@@ -12,8 +12,6 @@ passport.use(
     { passReqToCallback: true, usernameField: "email" },
     async (req, email, password, done) => {
       try {
-        //LA ESTRATEGIA NECESARIA PARA REGISTRAR A UN USUARIO
-        //QUE CONSTA DE TODO LO QUE VALIDAMOS EN LOS MIDDLEWARES
         if (!email || !password) {
           const error = new Error("Please enter email and password!");
           error.statusCode = 400;
@@ -64,8 +62,6 @@ passport.use(
           const token = createToken(user);
           user.token = token;
           return done(null, user);
-          //agrega la propeidad USER al objeto de requerimientos
-          //esa propiedad user tiene todas las propiedades que estamos definiendo en el objeto correspondiente
         }
         const error = new Error("Invalid credentials");
         error.statusCode = 401;
@@ -87,8 +83,6 @@ passport.use(
     },
     async (req, accesToken, refreshToken, profile, done) => {
       try {
-        //profile es el objeto que devuelve google con todos los datos del usuario
-        //nosotros vamos a registrar un id en lugar de un email
         const { id, picture } = profile;
         console.log(profile);
         let user = await usersManager.readByEmail(id);

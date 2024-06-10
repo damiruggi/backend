@@ -1,9 +1,10 @@
-import { Command } from "commander";
+import { Command } from "commander"
 
-const args = new Command();
-args.option("-p <port>", "port", 8080);
-args.option("--env <env>", "enviroment", "prod");
-args.option("--persistence <pers>", "persistence", "mongo");
+const args =  new Command()
 
-args.parse();
-export default args.opts();
+args.option("-p <port>","port", 8080)
+args.option("--env <env>", "environment", "prod")
+args.option("--persistence <pers>", "persistence", "mongo")
+
+args.parse()
+export default args.opts()

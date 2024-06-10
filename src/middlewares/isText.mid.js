@@ -1,4 +1,4 @@
-function isText(req, res, next) {
+function isTitle(req, res, next) {
   try {
     const { title } = req.body;
     if (!title) {
@@ -12,4 +12,4 @@ function isText(req, res, next) {
   }
 }
 
-export default isText;
+export default isTitle;
