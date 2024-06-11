@@ -8,13 +8,12 @@ config({ path });
 
 const environment = {
   PORT: process.env.PORT,
-  MONGO_URI: process.env.MONGO_URI,
-  SECRET: process.env.SECRET,
+  SECRET_COOKIE: process.env.SECRET_COOKIE,
   SECRET_SESSION: process.env.SECRET_SESSION,
-
+  SECRET_JWT: process.env.SECRET_JWT,
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-  SECRET_JWT: process.env.SECRET_JWT,
+  MONGO_URI: process.env.MONGO_URI,
 };
 
 export default environment;
