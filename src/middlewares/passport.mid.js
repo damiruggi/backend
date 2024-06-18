@@ -105,21 +105,20 @@ passport.use(
 );
 
 passport.use(
-  'jwt',
+  "jwt",
   new JWTStrategy(
     {
       jwtFromRequest: ExtractJwt.fromExtractors([
-        ExtractJwt.fromAuthHeaderAsBearerToken(),
-        (req) => req?.cookies['token'],
+        (req) => req?.cookies["token"],
       ]),
       secretOrKey: process.env.SECRET_JWT,
     },
-    (jwtPayload, done) => {
+    (data, done) => {
       try {
-        if (jwtPayload) {
-          return done(null, jwtPayload);
+        if (data) {
+          return done(null, data);
         } else {
-          const error = new Error('Forbidden from jwt!');
+          const error = new Error("Forbidden from jwt!");
           error.statusCode = 403;
           return done(error);
         }
