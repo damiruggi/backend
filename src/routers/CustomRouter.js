@@ -41,28 +41,27 @@ class CustomRouter {
   };
   policies = (policies) => async (req, res, next) => {
     if (policies.includes("PUBLIC")) return next();
-    else {
-      let token = req.cookies["token"];
-      if (!token) return res.error401();
-      else {
-        try {
-          token = verifyToken(token);
-          const { role, email } = token;
-          if (
-            (policies.includes("USER") && role === 0) ||
-            (policies.includes("ADMIN") && role === 1)
-          ) {
-            const user = await usersManager.readByEmail(email);
-            //proteger contraseña del usuario!!!
-            req.user = user;
-            return next();
-          } else return res.error403();
-        } catch (error) {
-          return res.error400(error.message);
-        }
+    let token = req.cookies["token"];
+    if (!token) return res.error401();
+    try {
+      token = verifyToken(token);
+      const { role, email } = token;
+      if (
+        (policies.includes("USER") && role === 0) ||
+        (policies.includes("ADMIN") && role === 1)
+      ) {
+        const user = await usersManager.readByEmail(email);
+        // Protege la contraseña del usuario
+        req.user = { ...user._doc, password: undefined };
+        return next();
+      } else {
+        return res.error403();
       }
+    } catch (error) {
+      return res.error400(error.message);
     }
   };
+
   //create("/products", isValidAdmin, isText, create)
   create(path, arrayOfPolicies, ...callbacks) {
     this.router.post(

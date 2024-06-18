@@ -10,9 +10,8 @@ class SessionsController {
   async login(req, res, next) {
     try {
       return res
-        .cookie("token", req.user.token, { signed: true })
-        .status(200)
-        .json({ message: "Logged in!" });
+        .cookie("token", req.user.token, { signedCookie: true })
+        .message200("Logged in!");
     } catch (error) {
       return next(error);
     }

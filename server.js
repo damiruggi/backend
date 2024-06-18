@@ -33,7 +33,7 @@ server.use(cookieParser(environment.SECRET_COOKIE));
 
 server.use(
   session({
-    secret: environment.SECRET_SESSION,
+    secret: "clave dev",
     resave: true,
     saveUninitialized: true,
     cookie: { secure: false } // Ajusta esto según tu entorno
