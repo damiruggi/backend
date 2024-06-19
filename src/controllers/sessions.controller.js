@@ -1,7 +1,7 @@
 class SessionsController {
   async register(req, res, next) {
     try {
-      return res.status(201).json({ message: "Registered!" });
+      return res.message201("Registered!");
     } catch (error) {
       return next(error);
     }

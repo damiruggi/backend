@@ -2,6 +2,7 @@ import { Router } from "express";
 import jwt from 'jsonwebtoken'; // Importa jsonwebtoken
 import { verifyToken } from "../utils/token.util.js";
 import usersManager from "../data/mongo/UsersManager.mongo.js";
+import environment from "../utils/env.util.js";
 
 class CustomRouter {
   constructor() {
@@ -47,7 +48,7 @@ class CustomRouter {
       let token = req.cookies["token"];
       if (!token) return res.error401();
       else {
-        const data = jwt.verify(token, process.env.SECRET); // Usa jwt aquí
+        const data = jwt.verify(token, environment.SECRET_JWT); // Usa jwt aquí
         if (!data) return res.error400("Bad auth token!");
         else {
           const { email, role } = data;

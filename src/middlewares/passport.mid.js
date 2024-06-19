@@ -5,6 +5,7 @@ import { Strategy as JWTStrategy, ExtractJwt } from 'passport-jwt';
 import usersManager from '../data/mongo/UsersManager.mongo.js';
 import { createHash, verifyHash } from '../utils/hash.util.js';
 import { createToken } from '../utils/token.util.js';
+import environment from '../utils/env.util.js';
 
 passport.use(
   'register',
@@ -72,8 +73,8 @@ passport.use(
   'google',
   new GoogleStrategy(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientID: environment.GOOGLE_CLIENT_ID,
+      clientSecret: environment.GOOGLE_CLIENT_SECRET,
       callbackURL: 'http://localhost:8080/api/sessions/google/callback',
       passReqToCallback: true,
     },
@@ -111,7 +112,7 @@ passport.use(
       jwtFromRequest: ExtractJwt.fromExtractors([
         (req) => req?.cookies["token"],
       ]),
-      secretOrKey: process.env.SECRET_JWT,
+      secretOrKey: environment.SECRET_JWT,
     },
     (data, done) => {
       try {

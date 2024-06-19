@@ -5,7 +5,6 @@ import cookieParser from "cookie-parser";
 import session from "express-session";
 import passport from "passport";
 import argsUtil from "./src/utils/args.util.js";
-
 import indexRouter from "./src/routers/index.router.js";
 import errorHandler from "./src/middlewares/errorHandler.mid.js";
 import pathHandler from "./src/middlewares/pathHandler.mid.js";
@@ -48,3 +47,4 @@ server.use(passport.session());
 server.use("/", indexRouter);
 server.use(errorHandler);
 server.use(pathHandler);
+
