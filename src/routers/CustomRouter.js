@@ -1,21 +1,20 @@
 import { Router } from "express";
-import jwt from 'jsonwebtoken'; // Importa jsonwebtoken
 import { verifyToken } from "../utils/token.util.js";
-import usersManager from "../data/mongo/UsersManager.mongo.js";
-import environment from "../utils/env.util.js";
+import userRepository from "../repositories/users.rep.js";
 
 class CustomRouter {
+  //para construir y configurar cada instancia del enrutador
   constructor() {
     this.router = Router();
     this.init();
   }
-
+  //para obtener todas las rutas del enrutador definido
   getRouter() {
     return this.router;
   }
-
+  //para inicializar las clases/propiedades heredades (sub-routers)
   init() {}
-
+  //para manejar las callbacks (de middlewares y la final)
   applyCbs(callbacks) {
     return callbacks.map((callback) => async (...params) => {
       try {
@@ -25,7 +24,6 @@ class CustomRouter {
       }
     });
   }
-
   response = (req, res, next) => {
     res.message200 = (message) => res.json({ statusCode: 200, message });
     res.response200 = (response) => res.json({ statusCode: 200, response });
@@ -34,39 +32,33 @@ class CustomRouter {
     res.message201 = (message) => res.json({ statusCode: 201, message });
     res.error400 = (message) => res.json({ statusCode: 400, message });
     res.error401 = () =>
-      res.json({ statusCode: 401, message: "Bad auth from policies!" });
+      res.json({ statusCode: 401, message: "Bad auth from poliecies!" });
     res.error403 = () =>
-      res.json({ statusCode: 403, message: "Forbidden from policies!" });
+      res.json({ statusCode: 403, message: "Forbidden from poliecies!" });
     res.error404 = () =>
       res.json({ statusCode: 404, message: "Not found docs" });
     return next();
   };
-
-  policies = (arrayOfPolicies) => async (req, res, next) => {
+  policies = (policies) => async (req, res, next) => {
+    //desarrollar las politicas
     try {
-      if (arrayOfPolicies.includes("PUBLIC")) return next();
-      let token = req.cookies["token"];
+      if (policies.includes("PUBLIC")) return next();
+      const token = req.cookies["token"]
       if (!token) return res.error401();
-      else {
-        const data = jwt.verify(token, environment.SECRET_JWT); // Usa jwt aquí
-        if (!data) return res.error400("Bad auth token!");
-        else {
-          const { email, role } = data;
-          if (
-            (role === 0 && arrayOfPolicies.includes("USER")) ||
-            (role === 1 && arrayOfPolicies.includes("ADMIN"))
-          ) {
-            const user = await usersManager.readByEmail(email);
-            req.user = user;
-            return next();
-          } else return res.error403();
-        }
+      const dataOfToken = verifyToken(token)
+      const { email, role } = dataOfToken
+      //el role lo necesito para autorizaciones
+      //el email para buscar el usuario y agregar la propiedad user al objeto de requerimientos
+      if ((policies.includes("USER")&& role === 0) ||(policies.includes("ADMIN")&&role===1)){
+        const user = await userRepository.readByEmailRepository(email)
+        //proteger la contraseña!!!
+        req.user = user
       }
+      return res.error403();
     } catch (error) {
-      return next(error);
+      return next(error)
     }
   };
-
   create(path, arrayOfPolicies, ...callbacks) {
     this.router.post(
       path,
@@ -75,7 +67,6 @@ class CustomRouter {
       this.applyCbs(callbacks)
     );
   }
-
   read(path, arrayOfPolicies, ...callbacks) {
     this.router.get(
       path,
@@ -84,7 +75,6 @@ class CustomRouter {
       this.applyCbs(callbacks)
     );
   }
-
   update(path, arrayOfPolicies, ...callbacks) {
     this.router.put(
       path,
@@ -93,7 +83,6 @@ class CustomRouter {
       this.applyCbs(callbacks)
     );
   }
-
   destroy(path, arrayOfPolicies, ...callbacks) {
     this.router.delete(
       path,
@@ -102,7 +91,6 @@ class CustomRouter {
       this.applyCbs(callbacks)
     );
   }
-
   use(path, ...callbacks) {
     this.router.use(path, this.response, this.applyCbs(callbacks));
   }

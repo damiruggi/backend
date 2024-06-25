@@ -1,128 +1,108 @@
-import passport from 'passport';
-import { Strategy as LocalStrategy } from 'passport-local';
-import { Strategy as GoogleStrategy } from 'passport-google-oauth2';
-import { Strategy as JWTStrategy, ExtractJwt } from 'passport-jwt';
-import usersManager from '../data/mongo/UsersManager.mongo.js';
-import { createHash, verifyHash } from '../utils/hash.util.js';
-import { createToken } from '../utils/token.util.js';
-import environment from '../utils/env.util.js';
+import passport from "passport";
+import { Strategy as LocalStrategy } from "passport-local";
+import { Strategy as GoogleStrategy } from "passport-google-oauth2";
+//import usersManager from "../data/mongo/UsersManager.mongo.js";
+import { createHash, verifyHash } from "../utils/hash.util.js";
+import { createToken } from "../utils/token.util.js";
+import UsersDTO from "../dto/users.dto.js";
+import userRepository from "../repositories/users.rep.js";
+import crypto from "crypto";
+import sendEmail from "../utils/mailing.util.js";
 
 passport.use(
-  'register',
+  "register",
   new LocalStrategy(
-    { passReqToCallback: true, usernameField: 'email' },
+    { passReqToCallback: true, usernameField: "email" },
     async (req, email, password, done) => {
       try {
-        if (!email || !password) {
-          const error = new Error('Please enter email and password!');
+        let user = await userRepository.readByEmailRepository(email);
+        if (user) {
+          const error = new Error("Invalid credentials");
           error.statusCode = 400;
-          return done(null, false, error);
+          return done(error);
         }
-        const existingUser = await usersManager.readByEmail(email);
-        if (existingUser) {
-          const error = new Error('User already exists!');
-          error.statusCode = 401;
-          return done(null, false, error);
-        }
-        const hashPassword = createHash(password);
-        req.body.password = hashPassword;
-        const newUser = await usersManager.create(req.body);
-        return done(null, newUser);
+        const data = new UsersDTO(req.body);
+        //1° el dto necesita las propiedades de verificacion
+        user = await userRepository.create(data);
+        //2° una vez que el usuario se creó
+        //la estrategia debe enviar un correo electronico
+        //con un codigo aleatorio para la verificacion del usuario
+        await sendEmail({
+          to: email,
+          first_name: user.first_name,
+          code: user.verifyCode,
+        });
+        return done(null, user);
       } catch (error) {
         return done(error);
       }
     }
   )
 );
-
 passport.use(
-  'login',
+  "login",
   new LocalStrategy(
-    { passReqToCallback: true, usernameField: 'email' },
+    { passReqToCallback: true, usernameField: "email" },
     async (req, email, password, done) => {
       try {
-        const user = await usersManager.readByEmail(email);
-        if (!user) {
-          const error = new Error('Invalid credentials!');
-          error.statusCode = 401;
-          return done(null, false, error);
+        const one = await userRepository.readByEmailRepository(email);
+        if (!one) {
+          const error = new Error("Invalid credentials");
+          error.statusCode = 400;
+          return done(error);
         }
-        const isPasswordValid = verifyHash(password, user.password);
-        if (isPasswordValid) {
-          const token = createToken({
-            email: user.email,
-            role: user.role,
-            photo: user.photo,
-            _id: user._id,
-            online: true,
-          });
-          const userWithToken = { ...user._doc, token };
-          return done(null, userWithToken);
+        const verifyPass = verifyHash(password, one.password);
+        //4° ahora no solo tengo que verificar la contraseña
+        //sino que tmb debo verificar que el usuario fue verificado
+        const verifyAccount = one.verify
+        if (!verifyPass && !verifyAccount) {
+          const error = new Error("Invalid credentials");
+          error.statusCode = 400;
+          return done(error);
         }
-        const error = new Error('Invalid credentials!');
-        error.statusCode = 401;
-        return done(null, false, error);
+        delete one.password;
+        const token = createToken({ email: one.email, role: one.role });
+        req.token = token;
+        return done(null, one);
       } catch (error) {
         return done(error);
       }
     }
   )
 );
-
 passport.use(
-  'google',
+  "google",
   new GoogleStrategy(
     {
-      clientID: environment.GOOGLE_CLIENT_ID,
-      clientSecret: environment.GOOGLE_CLIENT_SECRET,
-      callbackURL: 'http://localhost:8080/api/sessions/google/callback',
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: "http://localhost:8080/api/sessions/google/callback",
       passReqToCallback: true,
     },
-    async (req, accessToken, refreshToken, profile, done) => {
+    async (req, accesToken, refreshToken, profile, done) => {
       try {
+        //profile es el objeto que devuelve google con todos los datos del usuario
+        //nosotros vamos a registrar un id en lugar de un email
         const { id, picture } = profile;
-        let user = await usersManager.readByEmail(id);
+        console.log(profile);
+        //let user = await usersManager.readByEmail(id);
         if (!user) {
-          user = await usersManager.create({
+          user = {
             email: id,
             password: createHash(id),
             photo: picture,
-          });
+          };
+          //user = await usersManager.create(user);
         }
-        const token = createToken({
-          email: user.email,
-          role: user.role,
-          photo: user.photo,
-          _id: user._id,
-          online: true,
-        });
-        const userWithToken = { ...user._doc, token };
-        return done(null, userWithToken);
-      } catch (error) {
-        return done(error);
-      }
-    }
-  )
-);
-
-passport.use(
-  "jwt",
-  new JWTStrategy(
-    {
-      jwtFromRequest: ExtractJwt.fromExtractors([
-        (req) => req?.cookies["token"],
-      ]),
-      secretOrKey: environment.SECRET_JWT,
-    },
-    (data, done) => {
-      try {
-        if (data) {
-          return done(null, data);
-        } else {
-          const error = new Error("Forbidden from jwt!");
-          error.statusCode = 403;
-          return done(error);
-        }
+        req.session.email = user.email;
+        req.session.online = true;
+        req.session.role = user.role;
+        req.session.photo = user.photo;
+        req.session.user_id = user._id;
+        //const token = createToken(data)
+        //req.token = token
+        //cuando llegan al controller setean la cookie con req.token
+        return done(null, user);
       } catch (error) {
         return done(error);
       }
