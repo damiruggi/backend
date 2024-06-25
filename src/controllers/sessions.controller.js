@@ -19,8 +19,8 @@ class SessionsController {
 
   async profile(req, res, next) {
     try {
-      if (req.user && req.user.online) {
-        return res.status(200).json(req.user);
+      if (req.user.online) {
+        return res.response200(req.user);
       }
       const error = new Error("Bad auth");
       error.statusCode = 401;

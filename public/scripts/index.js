@@ -1,3 +1,4 @@
+
 import { printNavBar, printFooter, printIcons } from "./modules/printLayout.js";
 import printFilter from "./modules/printFilter.js";
 import fetchProducts from "./modules/fetchProducts.js";
