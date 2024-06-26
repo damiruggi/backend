@@ -1,0 +1,37 @@
+[
+  {
+    "id": "23660d44a0dd370a1ae91a22",
+    "photo": "https://ceslava.s3-accelerate.amazonaws.com/2012/12/foto-perfil.jpg",
+    "email": "damiruggi@gmail.com",
+    "password": "123456",
+    "role": 0
+  },
+  {
+    "id": "398ea474ea03848bbaa1e5cf",
+    "photo": "https://wl-genial.cf.tsp.li/resize/728x/jpg/91b/430/964a9c5ac9933cc012d0bd80be.jpg",
+    "email": "antumoles@gmail.com",
+    "password": "567890",
+    "role": 0
+  },
+  {
+    "id": "db898f85f589c39aeaaf79fb",
+    "photo": "https://www.dzoom.org.es/wp-content/uploads/2020/02/portada-foto-perfil-redes-sociales-consejos-810x540.jpg",
+    "email": "lalalala@gmail.com",
+    "password": "234sdff",
+    "role": 1
+  },
+  {
+    "id": "42448224a97cf0d4c598cf0b",
+    "photo": "https://i.pinimg.com/550x/8d/e7/fa/8de7fa2af12330350613ede63532c4fb.jpg",
+    "email": "morena@hotmail.com",
+    "password": "fdsfdsda23",
+    "role": 1
+  },
+  {
+    "id": "ac8376f0b5db984b9f8867f0",
+    "photo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTEhMVFRUXGBUaGBUWGRkXGhcaGB0YGBgXFRUYHigiHxonHRUWITEiJiktLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0mHyYuLS4tLS0tLS0tLy0tLS0tLS0rLSstLS8vLS0tLS0tKy0tLS0tLS41Li0tLS0tNy0tL//AABEIAL8BCAMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcEBQIDCAH/xAA+EAACAQIDBQYCBwUJAQAAAAABAgADEQQhMQUGEkFhBxMiUXGBkaEUIzJCUrHwYnKCksEzQ1NzorLR4fEV/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAIDBAUB/8QAJxEBAAICAgMAAQMFAQAAAAAAAAECAxESIQQxQVEiYXETFDIzsQX/2gAMAwEAAhEDEQA/ALxiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiJj43H0qK8VaolNfN2Cj4kwMiJCcV2rbJQkfSC5Bt4Edgeqtw2I6gzu2X2m7KrtwjEhDy70NSB/iYBfa94EwicabhgCpBB0INwfQzlAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERIJ2qb6HA0RRoX+lVge7sL92uhqEHnyHX0MDH7Ru0ungb0MOBVxJGeYKUf8y2Zbnw/EjnRO19qYjG1e9xNVqr6AtayjyVAAAPS03uyt2TUJeuSSxJIBzJOZLN55yWYHYlNPsUl9SL/ADMy5PLrWdR22YvCveNz0rGjs92PhRyPMKSPW86quGKkgg5eYI+UvOngDYTEx2x0qCzoG/P4jOVR5k/YXz/58a6sq/d3erG4Ej6PXZVGfdHxUz53pnL3FjL53D3/AKG0QKZ+qxIW7UicmtkWpHmOmov7ysdpbm0mF0uhHK9x8",
+    "email": "damiruggi@gmail.com",
+    "password": "xgddf",
+    "role": 0
+  }
+]
