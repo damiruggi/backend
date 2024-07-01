@@ -26,6 +26,22 @@ class Manager {
       throw error;
     }
   }
+  async readByEmail(email) {
+    try {
+      const one = await this.Model.findOne({ email });
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async paginate({filter, opts}) {
+    try {
+      const all = await this.Model.paginate(filter, opts);
+      return all;
+    } catch (error) {
+      throw error;
+    }
+  }
   async readOne(id) {
     try {
       //const one = await Note.findById(id)
@@ -55,6 +71,14 @@ class Manager {
     try {
       const one = await this.Model.findByIdAndDelete(id);
       return one;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async aggregate(obj) {
+    try {
+      const result = await this.Model.aggregate(obj);
+      return result;
     } catch (error) {
       throw error;
     }
