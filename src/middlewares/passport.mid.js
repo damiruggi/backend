@@ -8,6 +8,8 @@ import UsersDTO from "../dto/users.dto.js";
 import userRepository from "../repositories/users.rep.js";
 import crypto from "crypto";
 import sendEmail from "../utils/mailing.util.js";
+import CustomError from "../utils/errors/CustomError.js";
+import errors from "../utils/errors/errors.js"
 
 passport.use(
   "register",
@@ -17,8 +19,7 @@ passport.use(
       try {
         let user = await userRepository.readByEmailRepository(email);
         if (user) {
-          const error = new Error("Invalid credentials");
-          error.statusCode = 400;
+          const error = new CustomError(errors.invalid)
           return done(error);
         }
         const data = new UsersDTO(req.body);
@@ -47,8 +48,7 @@ passport.use(
       try {
         const one = await userRepository.readByEmailRepository(email);
         if (!one) {
-          const error = new Error("Invalid credentials");
-          error.statusCode = 400;
+          const error = new CustomError(errors.invalid)
           return done(error);
         }
         const verifyPass = verifyHash(password, one.password);
@@ -56,8 +56,7 @@ passport.use(
         //sino que tmb debo verificar que el usuario fue verificado
         const verifyAccount = one.verify
         if (!verifyPass && !verifyAccount) {
-          const error = new Error("Invalid credentials");
-          error.statusCode = 400;
+          const error = new CustomError(errors.invalid)
           return done(error);
         }
         delete one.password;

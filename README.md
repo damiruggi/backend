@@ -15,7 +15,7 @@
 * **Sprint 8**: Genere el script argv en package.json. Instale dotenv, jwt y token. **http://localhost:8080/.**
 * **Sprint 9**: Implementé repositories y services. **http://localhost:8080/.**
 * **Sprint Entrega 3**: Implementé nodemailer y dto. **http://localhost:8080/.**
-* **Sprint 10**: Implementé gzip y faker. Generé 100p productos con fake con el comando "npm run products" y el de usuarios con el comando "npm run users" **http://localhost:8080/.**
+* **Sprint 10**: Implementé gzip y faker. Generé 100p productos con fake con el comando "npm run products" y el de usuarios con el comando "npm run users". Tambien implemente compression para el manejo de errores. **http://localhost:8080/.**
 
 ## Implementaciones
 
