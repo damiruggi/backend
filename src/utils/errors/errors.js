@@ -6,3 +6,5 @@ const errors = {
   notFound: { message: "Not found", statusCode: 404 },
   fatal: { message: "Fatal", statusCode: 500 },
 };
+
+export default errors;
