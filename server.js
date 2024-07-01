@@ -3,6 +3,7 @@ import express from "express";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import compression from "express-compression";
 
 import argsUtil from "./src/utils/args.util.js";
 
@@ -24,6 +25,11 @@ server.use(express.static(__dirname + "/public"));
 server.use(morgan("dev"));
 server.use(cookieParser(environment.SECRET_COOKIE));
 server.use(cors({ origin: true, credentials: true }));
+server.use(
+    compression({
+    brotli: { enabled: true, zlib: {} },
+    })
+    );
 
 //endpoints
 server.use("/", indexRouter);

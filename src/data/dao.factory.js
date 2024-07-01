@@ -29,9 +29,9 @@ switch (persistence) {
       "./mongo/CartsManager.mongo.js"
     );
     dao = {
-      petsManager: productsManagerMongo,
+      productsManager: productsManagerMongo,
       usersManager: usersManagerMongo,
-      adoptionsManager: cartsManagerMongo,
+      cartManager: cartsManagerMongo,
     };
     break;
 }

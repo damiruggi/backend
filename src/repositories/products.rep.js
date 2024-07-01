@@ -1,9 +1,8 @@
-//REPOSITORIO LLAMA A DAO
 import ProductDto from "../dto/products.dto.js";
 import dao from "../data/dao.factory.js";
-const { productsRepository } = dao;
+const { productsManager } = dao; // Asegúrate de que la importación es correcta
 
-class PetsRepository {
+class ProductsRepository {
   constructor() {
     this.model = productsManager;
   }
@@ -34,7 +33,6 @@ class PetsRepository {
   };
   updateRepository = async (id, data) => {
     try {
-      //agregar UpdatePetDto para modificar el objeto data ante la actualizacion
       const one = await this.model.update(id, data);
       return one;
     } catch (error) {
@@ -51,5 +49,5 @@ class PetsRepository {
   };
 }
 
-const petsRepository = new ProductsRepository();
+const productsRepository = new ProductsRepository();
 export default productsRepository;
