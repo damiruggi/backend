@@ -1,4 +1,4 @@
-import User from "./models/user.models.js";
+import User from "./models/user.models.js"
 import Manager from "./Manager.mongo.js";
 
 const usersManager = new Manager(User);

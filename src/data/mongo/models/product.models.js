@@ -7,8 +7,7 @@ const schema = new Schema(
     title: { type: String, required: true, index: true },
     description: { type: String, required: true },
     price: { type: Number, default: 1 },
-    stock: { type: Number, default: 1 },
-    category: { type: String, default: "Zapatilla" },
+    stock: { type: Number, default: 10 },
     images: [
       {
         type: String,
