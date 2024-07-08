@@ -14,7 +14,6 @@
 * **Sprint 7**: Instale mongoose paginate. Implemente en los archivos models.js de users, products y cart los populate y los index true para popular los usuarios con productos. Ademas implemente el paginate de productos. Tambien implemente bcrypt, passport, google passsport y token para salvaguardar la password en el registro de usuarios e implementar metodo de autenticación. Para visualizar todo es desde la ruta **http://localhost:8080/.**
 * **Sprint 8**: Genere el script argv en package.json. Instale dotenv, jwt y token. **http://localhost:8080/.**
 * **Sprint 9**: Implementé repositories y services. **http://localhost:8080/.**
-* **Sprint Entrega 3**: Implementé nodemailer y dto. **http://localhost:8080/.**
 * **Sprint 10**: Implementé gzip y faker. Generé 1000 productos con fake con el comando "npm run products" y el de usuarios con el comando "npm run users". Tambien implemente compression para el manejo de errores. **http://localhost:8080/.**
 * **Sprint 11**: Implementé winston, artilley y cors. **http://localhost:8080/.**
 
