@@ -16,6 +16,7 @@
 * **Sprint 9**: Implementé repositories y services. **http://localhost:8080/.**
 * **Sprint Entrega 3**: Implementé nodemailer y dto. **http://localhost:8080/.**
 * **Sprint 10**: Implementé gzip y faker. Generé 1000 productos con fake con el comando "npm run products" y el de usuarios con el comando "npm run users". Tambien implemente compression para el manejo de errores. **http://localhost:8080/.**
+* **Sprint 11**: Implementé winston, artilley y cors. **http://localhost:8080/.**
 
 ## Implementaciones
 
@@ -37,6 +38,8 @@
 * Nodemailer
 * Gzip
 * Faker
+* Winston
+* Artillery
 
 
 ## Dependencias
@@ -59,6 +62,8 @@
 * `nodemailer`
 * `gzip`
 * `faker`
+* `winston`
+* `artillery`
 
 ## Instalación
 
@@ -82,4 +87,6 @@
 * `npm install nodemailer`
 * `npm i express-compression`
 * `npm install @faker-js/faker --save-dev`
+* `npm install winston`
+* `npm install -g artillery`
 
