@@ -1,0 +1,25 @@
+config:
+  pluggins:
+    metrics-by-endpoint : {}
+  target: http://localhost:8080/api
+  phases:
+    - duration: 10
+      arrivalRate: 50
+scenarios:
+  - name: login
+    flow:
+      - log: login
+      - post: 
+          url: /auth/login
+          json:
+            email: damiruggi@gmail.com
+            password: damiruggi
+      - log: read all products
+      - get:
+          url: /products
+      - log: create product
+      - post:
+          url: /products
+          json:
+            name: Remera negra
+            category: remera
