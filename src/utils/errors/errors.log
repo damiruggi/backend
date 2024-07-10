@@ -8,3 +8,4 @@
 [33mERROR[39m: GET /api/sessions/online undefined - 3:49:36 PM - jwt malformed
 [33mERROR[39m: POST /api/sessions/login undefined - 3:49:42 PM - undefined
 [33mERROR[39m: GET /api/sessions/online undefined - 10:32:08 AM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 2:20:14 PM - jwt malformed

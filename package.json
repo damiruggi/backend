@@ -16,7 +16,9 @@
     "simplex": "artillery quick --count 20 --num 100 'http://localhost:8080/simplex' -o ./test/artillery/simplex.json",
     "complex": "artillery quick --count 20 --num 100 'http://localhost:8080/complex' -o ./test/artillery/complex.json",
     "flow": "artillery run ./test/artillery/flow.yaml -o ./test/artillery/flow.json",
-    "report": "artillery report ./test/artillery/flow.json"
+    "report": "artillery report ./test/artillery/flow.json",
+    "image": "docker build -t app",
+    "container": "docker run -p 9000:8080 app"
   },
   "keywords": [],
   "author": "",
@@ -50,6 +52,6 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.4"
   }
 }
