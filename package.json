@@ -18,7 +18,11 @@
     "flow": "artillery run ./test/artillery/flow.yaml -o ./test/artillery/flow.json",
     "report": "artillery report ./test/artillery/flow.json",
     "image": "docker build -t app",
-    "container": "docker run -p 9000:8080 app"
+    "container": "docker run -p 9000:8080 app",
+    "rename": "docker tag app damiruggi/app:1.0.0",
+    "publish": "docker push damiruggi/app:1.0.0",
+    "org":"kubectl apply -f ./org.yaml",
+    "mini":""
   },
   "keywords": [],
   "author": "",

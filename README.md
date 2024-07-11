@@ -16,7 +16,7 @@
 * **Sprint 9**: Implementé repositories y services. **http://localhost:8080/.**
 * **Sprint 10**: Implementé gzip y faker. Generé 1000 productos con fake con el comando "npm run products" y el de usuarios con el comando "npm run users". Tambien implemente compression para el manejo de errores. **http://localhost:8080/.**
 * **Sprint 11**: Implementé winston, artilley y cors. **http://localhost:8080/.**
-* **Sprint 12**: Implementé docker. **http://localhost:8080/.**
+* **Sprint 12**: Implementé docker y subi la app a dockerhub, tambien implemente minikube. **http://localhost:8080/.**
 
 ## Implementaciones
 
@@ -41,6 +41,7 @@
 * Winston
 * Artillery
 * Docker
+* Minikube
 
 
 ## Dependencias
