@@ -24,3 +24,13 @@
 [33mERROR[39m: GET /api/sessions/online undefined - 2:37:11 PM - jwt malformed
 [33mERROR[39m: GET /api/sessions/online undefined - 2:37:13 PM - jwt malformed
 [33mERROR[39m: POST /api/sessions/login undefined - 2:37:18 PM - undefined
+[33mERROR[39m: GET /api/sessions/online undefined - 10:00:28 PM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 10:00:43 PM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 10:08:15 PM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 10:11:45 PM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 10:13:56 PM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 10:42:46 AM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 11:15:50 AM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 11:17:13 AM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 11:51:27 AM - jwt malformed
+[33mERROR[39m: GET /api/sessions/online undefined - 12:00:57 PM - jwt malformed

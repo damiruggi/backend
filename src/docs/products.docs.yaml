@@ -1,0 +1,101 @@
+components: 
+  schemas: 
+    Product:
+      type: object,
+      properties: 
+        description: 
+          type: string
+          description: descripcion del producto
+        price: 
+          type: string
+          description: precio del producto
+        stock: 
+          type: string
+          description: stock del producto
+        images: 
+          type: string
+          description: imagen del producto
+      example: 
+        description: Esto es un producto
+        price: 1
+        stock: 2
+        images: https://i.postimg.cc/kX8PKZpq/ipad.jpg
+  responses:
+    Message 200:
+      type: object
+      properties: 
+        statusCode:
+          type: integer
+          format: int64
+          description: Codigo de estado correspondiente a la solicitud al exito
+        message: 
+        type: string
+        description: texto descriptivo con 
+    Message 201:
+      type: object
+      properties: 
+        statusCode:
+          type: integer
+          format: int64
+          description: Codigo de estado correspondiente a la solicitud al exito ebn nla creacion
+        message: 
+        type: string
+        description: texto descriptivo con 
+    Response 201:
+      type: object
+      properties: 
+        statusCode:
+          type: integer
+          format: int64
+          description: Codigo de estado correspondiente a la solicitud al exito devolviendo datos
+        message: 
+        type: string
+        description: texto descriptivo con 
+    Paginate:
+      type: object
+      properties: 
+        statusCode:
+          type: integer
+          format: int64
+          description: Codigo de estado correspondiente a la solicitud al exito devolviendo datos paginados
+        example:  
+    Error 400:
+      type: object
+      properties: 
+        statusCode:
+          type: integer
+          format: int64
+          description: Codigo de estado correspondiente a la solicitud al fracaso por problemas del cliente
+      example:  
+    Error 401:
+      type: object
+      properties: 
+        statusCode:
+          type: integer
+          format: int64
+          description: Codigo de estado correspondiente a la solicitud al fracaso por problemas del cliente
+        example:  
+    Error 403:
+      type: object
+      properties: 
+        statusCode:
+          type: integer
+          format: int64
+          description: Codigo de estado correspondiente a la solicitud al fracaso por problemas del cliente
+        example: 
+    Error 404:
+      type: object
+      properties: 
+        statusCode:
+          type: integer
+          format: int64
+          description: Codigo de estado correspondiente a la solicitud al fracaso por no encontrar lo solicitado
+        example:  
+    Error 500:
+      type: object
+      properties: 
+        statusCode:
+          type: integer
+          format: int64
+          description: Codigo de estado correspondiente a la solicitud al fracaso por error fatal
+        example:  

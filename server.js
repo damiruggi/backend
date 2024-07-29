@@ -12,8 +12,13 @@ import errorHandler from "./src/middlewares/errorHandler.mid.js";
 import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import __dirname from "./utils.js";
 import winston from "./src/middlewares/winston.mid.js";
+import swaggerOptions from "./src/config/swagger.js";
+import swaggerJSDoc from "swagger-jsdoc";
+import { serve, setup } from "swagger-ui-express";
+import options from "./src/config/swagger.js";
 
 const port = environment.PORT || argsUtil.p;
+
 
 if (cluster.isPrimary) {
   const numOfProc = cpus().length;
@@ -49,6 +54,8 @@ if (cluster.isPrimary) {
       brotli: { enabled: true, zlib: {} },
     })
   );
+  const specs = swaggerJSDoc(swaggerOptions);
+  server.use("/api/docs", serve, setup(specs));
 
   // endpoints
   server.use("/", indexRouter);
