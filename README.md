@@ -16,7 +16,8 @@
 * **Sprint 9**: Implementé repositories y services. **http://localhost:8080/.**
 * **Sprint 10**: Implementé gzip y faker. Generé 1000 productos con fake con el comando "npm run products" y el de usuarios con el comando "npm run users". Tambien implemente compression para el manejo de errores. **http://localhost:8080/.**
 * **Sprint 11**: Implementé winston, artilley y cors. **http://localhost:8080/.**
-* **Sprint 12**: Implementé docker y subi la app a dockerhub, tambien implemente minikube. Implemente tambien Joi **http://localhost:8080/.**
+* **Sprint 12**: Implementé docker y subi la app a dockerhub, tambien implemente minikube. Implemente tambien Joi. Instale e implemente swagger para documentar la api, tambien mocha y chai para testing. **http://localhost:8080/. y http://localhost:8080/api/docs**
+* **Sprint 13**: Implementé supertest y mocha chai supertest. **http://localhost:8080/.
 
 ## Implementaciones
 
@@ -43,6 +44,10 @@
 * Docker
 * Minikube
 * joi
+* swagger
+* mocha
+* chai
+* supertest
 
 
 ## Dependencias
@@ -68,6 +73,10 @@
 * `winston`
 * `artillery`
 * `joi`
+* `swagger`
+* `mocha`
+* `chai`
+* `supertest`
 
 ## Instalación
 
@@ -94,4 +103,10 @@
 * `npm install winston`
 * `npm install -g artillery`
 * `npm install joi joi-oid`
+* `npm install swagger-jsdoc`
+* `npm install swagger-ui-express`
+* `npm install -D mocha`
+* `npm install -D chai`
+* `npm install -D supertest`
+* `npm install -D mocha chai supertest`
 
