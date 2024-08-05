@@ -6,7 +6,7 @@ class ProductsRepository {
   constructor() {
     this.model = productsManager;
   }
-  createRepository = async (data) => {
+  create = async (data) => {
     try {
       data = new ProductDto(data);
       const one = await this.model.create(data);
@@ -15,7 +15,7 @@ class ProductsRepository {
       throw error;
     }
   };
-  readRepository = async (filter) => {
+  read = async (filter) => {
     try {
       const all = await this.model.read(filter);
       return all;
@@ -23,7 +23,7 @@ class ProductsRepository {
       throw error;
     }
   };
-  readByIdRepository = async (id) => {
+  readOne = async (id) => {
     try {
       const one = await this.model.readOne(id);
       return one;
@@ -31,7 +31,7 @@ class ProductsRepository {
       throw error;
     }
   };
-  updateRepository = async (id, data) => {
+  update = async (id, data) => {
     try {
       const one = await this.model.update(id, data);
       return one;
@@ -39,7 +39,7 @@ class ProductsRepository {
       throw error;
     }
   };
-  destroyRepository = async (id) => {
+  destroy = async (id) => {
     try {
       const one = await this.model.destroy(id);
       return one;

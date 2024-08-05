@@ -15,7 +15,7 @@ class UserRepository {
       throw error;
     }
   };
-  readByEmailRepository = async (email) => {
+  readByEmail = async (email) => {
     try {
       const one = await this.model.readByEmail(email);
       return one;
@@ -23,7 +23,7 @@ class UserRepository {
       throw error;
     }
   };
-  updateRepository = async (id, data) => {
+  update = async (id, data) => {
     try {
       const one = await this.model.update(id, data);
       return one;

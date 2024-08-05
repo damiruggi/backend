@@ -27,13 +27,13 @@ describe("Testeando el recurso Producto", () => {
     expect(response).to.have.property("_id");
   });
   it("Testeando la actualización de un producto", async () => {
-    const one = await productsManager.readBy({ _id: id });
+    const one = await productsManager.readOne({ _id: id });
     const response = await productsManager.update(id, { title: "Remera" });
     expect(one.title).is.not.equal(response.title);
   });
   it("Testeando la eliminacion de un producto", async () => {
     await productsManager.destroy(id);
-    const one = await productsManager.readBy({ _id: id });
+    const one = await productsManager.readOne({ _id: id });
     expect(one).not.exist;
   });
 });

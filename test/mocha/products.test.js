@@ -35,13 +35,13 @@ describe(//la descripcion del entorno de testeo
     assert.ok(response._id);
   });
   it("Testeando la actualización de un producto", async () => {
-    const one = await productsManager.readBy({ _id: id });
+    const one = await productsManager.readOne({ _id: id });
     const response = await productsManager.update(id, { title: "Remera" });
     assert.notEqual(one.title, response.title);
   });
   it("Testeando la eliminacion de un producto", async () => {
     await productsManager.destroy(id);
-    const one = await productsManager.readBy({ _id: id });
+    const one = await productsManager.readOne({ _id: id });
     assert.strictEqual(one, null);
   });
 });
