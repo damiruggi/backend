@@ -18,6 +18,7 @@
 * **Sprint 11**: Implementé winston, artilley y cors. **http://localhost:8080/.**
 * **Sprint 12**: Implementé docker y subi la app a dockerhub, tambien implemente minikube. Implemente tambien Joi. Instale e implemente swagger para documentar la api, tambien mocha y chai para testing. **http://localhost:8080/. y http://localhost:8080/api/docs**
 * **Sprint 13**: Implementé supertest y mocha chai supertest. **http://localhost:8080/.
+* **Sprint 14**: Implementé stripe **http://localhost:8080/ y https://backend-production-833a5.up.railway.app/.
 
 ## Implementaciones
 
@@ -48,6 +49,8 @@
 * mocha
 * chai
 * supertest
+* stripe
+* stripe
 
 
 ## Dependencias
@@ -77,6 +80,7 @@
 * `mocha`
 * `chai`
 * `supertest`
+* `stripe`
 
 ## Instalación
 
@@ -109,4 +113,7 @@
 * `npm install -D chai`
 * `npm install -D supertest`
 * `npm install -D mocha chai supertest`
+* `npm install stripe`
+* `npm install stripe`
+* `npm install -g @nestjs/cli`
 

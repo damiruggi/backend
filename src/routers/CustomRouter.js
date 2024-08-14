@@ -17,9 +17,9 @@ class CustomRouter {
   //para inicializar las clases/propiedades heredades (sub-routers)
   init() {}
   //para manejar las callbacks (de middlewares y la final)
-  applyCbs(callbacks) {
+applyCbs(callbacks) {
     return callbacks.map((callback) => async (...params) => {
-      try {
+            try {
         await callback.apply(this, params);
       } catch (error) {
         return params[2](error);
