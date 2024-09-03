@@ -1,8 +1,11 @@
 import { Router } from "express";
 import { verifyToken } from "../utils/token.util.js";
 import userRepository from "../repositories/users.rep.js";
+<<<<<<< HEAD
 import winston from "../utils/winston.util.js";
 
+=======
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
 
 class CustomRouter {
   //para construir y configurar cada instancia del enrutador
@@ -17,9 +20,15 @@ class CustomRouter {
   //para inicializar las clases/propiedades heredades (sub-routers)
   init() {}
   //para manejar las callbacks (de middlewares y la final)
+<<<<<<< HEAD
 applyCbs(callbacks) {
     return callbacks.map((callback) => async (...params) => {
             try {
+=======
+  applyCbs(callbacks) {
+    return callbacks.map((callback) => async (...params) => {
+      try {
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
         await callback.apply(this, params);
       } catch (error) {
         return params[2](error);
@@ -32,6 +41,7 @@ applyCbs(callbacks) {
     res.paginate = (response, info) =>
       res.json({ statusCode: 200, response, info });
     res.message201 = (message) => res.json({ statusCode: 201, message });
+<<<<<<< HEAD
     res.error400 = (message) => {
       const errorMessage = `${req.method} ${
         req.url
@@ -59,6 +69,15 @@ applyCbs(callbacks) {
       winston.ERROR(errorMessage);
       return res.json({ statusCode: 404, message: "Not found docs" });
     }
+=======
+    res.error400 = (message) => res.json({ statusCode: 400, message });
+    res.error401 = () =>
+      res.json({ statusCode: 401, message: "Bad auth from poliecies!" });
+    res.error403 = () =>
+      res.json({ statusCode: 403, message: "Forbidden from poliecies!" });
+    res.error404 = () =>
+      res.json({ statusCode: 404, message: "Not found docs" });
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
     return next();
   };
   policies = (policies) => async (req, res, next) => {

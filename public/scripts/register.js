@@ -45,4 +45,8 @@ document.querySelector("#register").addEventListener("click", async () => {
     timerProgressBar: true,
     confirmButtonColor: "#ff3b3c",
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

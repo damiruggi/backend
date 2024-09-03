@@ -36,4 +36,8 @@ schema.pre("find", function () { this.populate("product_id") });
 schema.pre("findOne", function () { this.populate("product_id") });
 
 const Cart = model(collection, schema);
+<<<<<<< HEAD
 export default Cart;
+=======
+export default Cart;
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

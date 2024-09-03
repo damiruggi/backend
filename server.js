@@ -1,5 +1,6 @@
 import environment from "./src/utils/env.util.js";
 import express from "express";
+<<<<<<< HEAD
 import cluster from "cluster";
 import { cpus } from "os";
 import cookieParser from "cookie-parser";
@@ -7,10 +8,19 @@ import cors from "cors";
 import compression from "express-compression";
 //import morgan from "morgan"; // Asegúrate de importar morgan
 import argsUtil from "./src/utils/args.util.js";
+=======
+import morgan from "morgan";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+
+import argsUtil from "./src/utils/args.util.js";
+
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
 import indexRouter from "./src/routers/index.router.js";
 import errorHandler from "./src/middlewares/errorHandler.mid.js";
 import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import __dirname from "./utils.js";
+<<<<<<< HEAD
 import winston from "./src/middlewares/winston.mid.js";
 import swaggerOptions from "./src/config/swagger.js";
 import swaggerJSDoc from "swagger-jsdoc";
@@ -76,3 +86,24 @@ if (cluster.isPrimary) {
     process.exit(1); // exit the worker to let cluster handle the restart
   });
 }
+=======
+
+//http server
+const server = express();
+const port = environment.PORT || argsUtil.p;
+const ready = async () => console.log("server ready on port " + port);
+server.listen(port, ready);
+
+//middlewares
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
+server.use(express.static(__dirname + "/public"));
+server.use(morgan("dev"));
+server.use(cookieParser(environment.SECRET_COOKIE));
+server.use(cors({ origin: true, credentials: true }));
+
+//endpoints
+server.use("/", indexRouter);
+server.use(errorHandler);
+server.use(pathHandler);
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

@@ -49,4 +49,8 @@ cookiesRouter.get("/get-signed", (req, res, next) => {
   }
 });
 
+<<<<<<< HEAD
 export default cookiesRouter;
+=======
+export default cookiesRouter;
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

@@ -16,9 +16,13 @@ const environment = {
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
   GOOGLE_EMAIL: process.env.GOOGLE_EMAIL,
+<<<<<<< HEAD
   GOOGLE_PASSWORD: process.env.GOOGLE_PASSWORD,
   STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY,
   STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+=======
+  GOOGLE_PASSWORD: process.env.GOOGLE_PASSWORD
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
 };
 
 console.log(`Environment variables: ${JSON.stringify(environment, null, 2)}`);
