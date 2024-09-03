@@ -9,4 +9,8 @@ export default async function fetchOptions() {
   } catch (error) {
     console.log(error);
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

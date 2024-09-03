@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
 import { printNavBar, printFooter, printIcons } from "./modules/printLayout.js";
 import printFilter from "./modules/printFilter.js";
 import fetchProducts from "./modules/fetchProducts.js";

@@ -17,4 +17,8 @@ document.querySelector("#profile").addEventListener("click", async () => {
     email: document.querySelector("#email").value,
     photo: document.querySelector("#photo").value,
   };
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

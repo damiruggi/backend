@@ -30,4 +30,8 @@ const schema = new Schema(
 schema.plugin(mongoosePaginate);
 
 const Product = model(collection, schema);
+<<<<<<< HEAD
 export default Product;
+=======
+export default Product;
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

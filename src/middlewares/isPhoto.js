@@ -10,4 +10,8 @@ function isPhoto(req, res, next) {
   }
 }
 
+<<<<<<< HEAD
 export default isPhoto;
+=======
+export default isPhoto;
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

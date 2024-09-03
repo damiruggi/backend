@@ -12,7 +12,24 @@
     "fs": "nodemon ./server.js -p 8082 --env=prod --persistence fs",
     "tdd": "node ./test/sum.tdd.js",
     "products": "node ./src/mocks/products.mock.js",
+<<<<<<< HEAD
+    "users": "node ./src/mocks/users.mock.js",
+    "simplex": "artillery quick --count 20 --num 100 'http://localhost:8080/simplex' -o ./test/artillery/simplex.json",
+    "complex": "artillery quick --count 20 --num 100 'http://localhost:8080/complex' -o ./test/artillery/complex.json",
+    "flow": "artillery run ./test/artillery/flow.yaml -o ./test/artillery/flow.json",
+    "report": "artillery report ./test/artillery/flow.json",
+    "image": "docker build -t app",
+    "container": "docker run -p 9000:8080 app",
+    "rename": "docker tag app damiruggi/app:1.0.0",
+    "publish": "docker push damiruggi/app:1.0.0",
+    "org": "kubectl apply -f ./org.yaml",
+    "tiendamia": "minikube service tiendamia-service",
+    "mocha": "mocha ./test/mocha",
+    "chai": "mocha ./test/chai",
+    "super": "mocha ./test/supertest"
+=======
     "users": "node ./src/mocks/users.mock.js"
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
   },
   "keywords": [],
   "author": "",
@@ -25,9 +42,18 @@
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+<<<<<<< HEAD
+    "express-compression": "^1.0.2",
     "express-handlebars": "^7.1.2",
     "express-session": "^1.18.0",
     "gitignore": "^0.7.0",
+    "joi": "^17.13.3",
+    "joi-oid": "^1.1.2",
+=======
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "gitignore": "^0.7.0",
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.2",
     "mongoose-paginate-v2": "^1.8.0",
@@ -40,10 +66,25 @@
     "passport-local": "^1.0.0",
     "session-file-store": "^1.5.0",
     "socket.io": "^4.7.5",
+<<<<<<< HEAD
+    "stripe": "^16.6.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "twilio": "^5.2.0",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "chai": "^5.1.1",
+    "mocha": "^10.7.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
+=======
     "twilio": "^5.2.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
     "nodemon": "^3.1.0"
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
   }
 }

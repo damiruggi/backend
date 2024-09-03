@@ -15,4 +15,8 @@ export default function printProductCards(arrayOfProducts, idSelector) {
     productsSelector.innerHTML =
       "<h3 style='width: 100%; text-align: center'>No hay coincidencias</h3>";
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

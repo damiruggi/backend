@@ -21,4 +21,8 @@ const schema = new Schema(
 schema.plugin(mongoosePaginate);
 
 const User = model(collection, schema);
+<<<<<<< HEAD
 export default User;
+=======
+export default User;
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

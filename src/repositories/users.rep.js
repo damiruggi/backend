@@ -15,7 +15,11 @@ class UserRepository {
       throw error;
     }
   };
+<<<<<<< HEAD
+  readByEmail = async (email) => {
+=======
   readByEmailRepository = async (email) => {
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
     try {
       const one = await this.model.readByEmail(email);
       return one;
@@ -23,7 +27,11 @@ class UserRepository {
       throw error;
     }
   };
+<<<<<<< HEAD
+  update = async (id, data) => {
+=======
   updateRepository = async (id, data) => {
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
     try {
       const one = await this.model.update(id, data);
       return one;

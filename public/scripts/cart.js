@@ -15,4 +15,8 @@ printNavBar(options, "navbar");
 printFooter(options, "footer");
 
 printCartCards("productscart");
+<<<<<<< HEAD
 //printCartTotal(cartproducts, "total");
+=======
+//printCartTotal(cartproducts, "total");
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323

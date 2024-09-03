@@ -26,6 +26,25 @@ class Manager {
       throw error;
     }
   }
+<<<<<<< HEAD
+  async readByEmail(email) {
+    try {
+      const one = await this.Model.findOne({ email });
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async paginate({filter, opts}) {
+    try {
+      const all = await this.Model.paginate(filter, opts);
+      return all;
+    } catch (error) {
+      throw error;
+    }
+  }
+=======
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
   async readOne(id) {
     try {
       //const one = await Note.findById(id)
@@ -59,6 +78,17 @@ class Manager {
       throw error;
     }
   }
+<<<<<<< HEAD
+  async aggregate(obj) {
+    try {
+      const result = await this.Model.aggregate(obj);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+=======
+>>>>>>> a6eb8328261b4472d1713d1a88ab78540eeff323
 }
 
 export default Manager;
